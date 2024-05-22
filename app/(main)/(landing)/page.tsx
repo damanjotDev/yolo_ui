@@ -5,18 +5,21 @@ import { useAppDispatch, useTypedSelector } from "@/app/store/store";
 
 function HomePage() {
   const dispatch = useAppDispatch();
-    const { adminDetailsLoading, adminDetails, error} = useTypedSelector((state) => state.Admin);
-    console.log('8', adminDetails)
+  const { adminDetailsLoading, adminDetails, error } = useTypedSelector((state) => state.Admin);
+
+
   return (
     <div
       className="
       h-full 
       flex
       flex-row
+      text-[70px]
+      text-primary
     "
     >
-        Home Page
-      </div>
+      Escape to Prasonisi
+    </div>
   );
 }
 
