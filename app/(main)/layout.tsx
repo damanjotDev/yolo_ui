@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { Oswald } from 'next/font/google'
 import '../globals.css'
-import { Toaster } from "@/components/ui/sonner"
 import StoreProviders from '../store/storeProvider'
+import { Navbar } from '@/components/navbars/navbar';
 
 const inter = Oswald({
   subsets: ['latin'],
@@ -23,9 +23,9 @@ export default function RootLayout({
     <html lang="en" className=''>
       <body className={`${inter.className}`}>
         <StoreProviders>
+          <Navbar/>
           {children}
         </StoreProviders>
-        <Toaster />
       </body>
     </html>
   )

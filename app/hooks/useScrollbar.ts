@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function useScrollHook() {
+function useScroll() {
   const [scrolled, setScrolled] = useState(false);
 
   const handleScrollToTop = () => {
@@ -27,4 +27,4 @@ function useScrollHook() {
   return {scrolled, handleScrollToTop};
 }
 
-export default useScrollHook;
+export {useScroll};

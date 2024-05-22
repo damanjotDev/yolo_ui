@@ -15,8 +15,7 @@ function HomePage() {
       flex
       flex-row
       text-[70px]
-      text-primary
-    "
+      text-primary"
     >
       Escape to Prasonisi
     </div>

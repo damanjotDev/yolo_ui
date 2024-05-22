@@ -1,6 +1,6 @@
 
-import { RoutesName } from "../../../../yolo_admin/src/utils/constant"
-import { MdOutlineAnalytics, RxDashboard } from "../../../../yolo_admin/src/utils/icons"
+import { RoutesName } from "@/app/utils/constant"
+import { MdOutlineAnalytics, RxDashboard } from "@/app/utils"
 import { usePathname, useRouter } from "next/navigation";
 
 
@@ -14,7 +14,7 @@ const useNavbarRoutes = () =>{
             id: '1',
             navigate: () => navigate.push(RoutesName.Dashboard),
             icon: RxDashboard,
-            active: RoutesName.Dashboard===location.pathname,
+            active: RoutesName.Dashboard===pathname,
             label: 'Dashboard'
             
         },
@@ -22,63 +22,62 @@ const useNavbarRoutes = () =>{
             id: '2',
             navigate: () => navigate.push(RoutesName.Services),
             icon: MdOutlineAnalytics,
-            active: RoutesName.Services===location.pathname,
+            active: RoutesName.Services===pathname,
             label: 'Services'
         },
         {
             id: '3',
             navigate: () => navigate.push(RoutesName.Properties),
             icon: RxDashboard,
-            active: RoutesName.Properties===location.pathname,
+            active: RoutesName.Properties===pathname,
             label: 'Properties'
         },
         {
             id: '4',
             navigate: () => navigate.push(RoutesName.Rooms),
             icon: MdOutlineAnalytics,
-            active: RoutesName.Rooms===location.pathname,
+            active: RoutesName.Rooms===pathname,
             label: 'Rooms'
         },
         {
             id: '5',
             navigate: () => navigate.push(RoutesName.Users),
             icon: MdOutlineAnalytics,
-            active: RoutesName.Users===location.pathname,
+            active: RoutesName.Users===pathname,
             label: 'Users'
         },
         {
             id: '6',
             navigate: () => navigate.push(RoutesName.Categories),
             icon: MdOutlineAnalytics,
-            active: RoutesName.Categories===location.pathname,
+            active: RoutesName.Categories===pathname,
             label: 'Categories'
         },
         {
             id: '7',
             navigate: () => navigate.push(RoutesName.Events),
             icon: MdOutlineAnalytics,
-            active: RoutesName.Events===location.pathname,
+            active: RoutesName.Events===pathname,
             label: 'Event'
         },
         {
             id: '8',
             navigate: () => navigate.push(RoutesName.Tags),
-            icon: MdOutlineAnalytics,
-            active: RoutesName.Tags===location.pathname,
+            icon: MdOutlineAnalytics,pathname,
             label: 'Tags'
         },
         {
             id: '9',
             navigate: () => navigate.push(RoutesName.Abouts),
             icon: MdOutlineAnalytics,
-            active: RoutesName.Abouts===location.pathname,
+            active: RoutesName.Abouts===pathname,
             label: 'Abouts'
         },
         {
             id: '10',
             navigate: () => navigate.push(RoutesName.Experiences),
             icon: MdOutlineAnalytics,
-            active: RoutesName.Experiences===location.pathname,
+            active: RoutesName.Experiences===pathname,
             label: 'Experiences'
         }
     ]
