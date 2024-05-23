@@ -18,36 +18,39 @@ const Navbar = () => {
           z-[50]
           w-full
           shadow-lg
-          bg-white
           flex
           items-center
           justify-between
           h-auto
           px-5
           py-3`}
-          initial={{ opacity: 0, y: -40 }}
-          animate={{ opacity: 1 , y: 0 }}
+          animate={{ background: scrolled?'white':'transparent' }}
           transition={{ duration: 0.4, delay: 0.5 }}>
+            <div className="
+            w-full
+            lg:mx-auto
+            lg:w-[70%]
+            flex
+            items-center
+            justify-between">
+                {/* Logo Section */}
+                <div className="
+                      flex
+                      items-center
+                    ">
+                  <img
+                    src="https://yolobackpackers.com/wp-content/uploads/2023/06/cropped-yolo-logo-18.png.webp"
+                    className="object-contain w-[auto] h-[50px]"
+                  />
+                </div>
 
-        {/* Logo Section */}
-        <div className="
-             w-[50%]
-             lg:w-[15%]
-             flex
-             items-center
-            ">
-          <img
-            src="https://yolobackpackers.com/wp-content/uploads/2023/06/cropped-yolo-logo-18.png.webp"
-            className="object-contain w-[100%] h-[50px]"
-          />
-        </div>
+                {/* Navigation section  for Desktop*/}
+                <DesktopNavbar/>
 
-        {/* Navigation section  for Desktop*/}
-        <DesktopNavbar/>
+                {/* Navigation section for mobile */}
+                <MobileNavbar/>
 
-        {/* Navigation section for mobile */}
-        <MobileNavbar/>
-
+            </div>
       </motion.div>
   )
 }
