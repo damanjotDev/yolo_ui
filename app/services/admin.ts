@@ -21,7 +21,7 @@ export const adminLogin = createAsyncThunk<any,any>('devroninsSlice/devroninsAdm
         const {data} = await adminAuth({email: params?.data?.email, password: params?.data?.password});
         localStorage.setItem('accessToken', data?.data.accessToken)
 
-        params?.navigate(RoutesName.Dashboard)
+        params?.navigate(RoutesName.Home)
 
         toast({
             title: "Success ",

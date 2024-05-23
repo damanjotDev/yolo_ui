@@ -3,8 +3,9 @@ import { usePathname } from "next/navigation";
 import {useScroll} from "@/app/hooks";
 import { motion } from "@/app/utils/animation";
 import { useTypedSelector } from "@/app/store/store";
-import { HomeCareousell } from "./careousell";
+import { HomeCareousell } from "./careousel/careousel";
 import { useEffect } from "react";
+import { HomeAbout } from "./about/about";
 
 
 
@@ -14,11 +15,13 @@ const Home = () => {
   const {scrolled} = useScroll();
   return (
       <div className={`
-          h-[calc(100vh)]
+          h-full
           w-full
           flex
-          flex-col`}>
+          flex-col
+          gap-20`}>
             <HomeCareousell/>
+            <HomeAbout/>
       </div>
   )
 }

@@ -12,11 +12,11 @@ html,body{
 @layer base {
 :root {
   --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
+  --foreground: 24 6% 15%;
   --card: 0 0% 100%;
   --card-foreground: 222.2 84% 4.9%;
   --popover: 0 0% 100%;
-  --popover-foreground: 222.2 84% 4.9%;
+  --popover-foreground: 24 6% 15%;
   --primary: 203 61% 63%;
   --primary-foreground: 210 40% 98%;
   --secondary: 210 40% 96.1%;
@@ -60,9 +60,6 @@ html,body{
 @layer base {
   * {
     @apply border-border;
-  }
-  body {
-    @apply bg-accent text-foreground ;
   }
   
 }

@@ -12,7 +12,7 @@ import image1 from "@/app/assets/images/home1.jpg"
 import image2 from "@/app/assets/images/home2.jpeg"
 import image3 from "@/app/assets/images/home3.jpg"
 import Image from "next/image";
-import { TypographyH1, TypographyH4, TypographyH5, TypographyP } from "../ui/Typography";
+import { TypographyH1, TypographyH4, TypographyH5, TypographyP } from "../../ui/Typography";
 
 const imageData = [
     {
@@ -67,7 +67,7 @@ export const HomeCareousell = () => {
                     key={item.id}>
                         <Image
                             src={item.imageUrl}
-                            className=" h-[calc(100vh)] w-full"
+                            className=" h-full object-cover w-full"
                             alt=""
                         />
                         <div className="
@@ -91,7 +91,7 @@ export const HomeCareousell = () => {
                             whileInView={{y:0, opacity: 1}}
                             transition={{duration: 0.4, ease:'linear'}}>
                                 <TypographyH1
-                                    className="font-[200]"
+                                    className="font-[200] text-center"
                                     title={item.title} />
                             </motion.div>
 
@@ -103,7 +103,7 @@ export const HomeCareousell = () => {
                             whileInView={{y:0, opacity: 1}}
                             transition={{duration: 0.4, ease:'linear', delay: 0.1}}>
                                 <TypographyH4
-                                    title={item.description} />
+                                    title={item.description} className="text-center"/>
                             </motion.div>
                         </div>
                     </div>
