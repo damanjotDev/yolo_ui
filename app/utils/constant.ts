@@ -1,7 +1,14 @@
 export const RoutesName = {
         Login: '/',
         
-        Dashboard: '/dashboard',
+        Home: '/home',
+
+        Locations: '/locations',
+        Experiences: '/experiences',
+        Gallery: '/gallery',
+        Adventure: '/blog',
+        Franchise: '/franchise',
+        Contact: '/contact',
 
         Services: '/services',
         ServiceAdd: '/services/add',
@@ -35,7 +42,6 @@ export const RoutesName = {
         AboutAdd: '/abouts/add',
         AboutEdit: '/abouts/edit',
 
-        Experiences: '/experiences',
         ExperienceAdd: '/experiences/add',
         ExperienceEdit: '/experiences/edit',
 

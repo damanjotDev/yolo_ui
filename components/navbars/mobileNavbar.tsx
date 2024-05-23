@@ -1,4 +1,4 @@
-
+'use client'
 import { motion } from "@/app/utils";
 import { TypographyH1, TypographyH3, TypographyH4, TypographyH5, TypographyP } from "../ui/Typography";
 import {
@@ -37,7 +37,7 @@ const MobileNavbar = () => {
                       justify-start
                       mt-4">
                     <img
-                    src="https://www.devronins.com/images/DevRonins.png"
+                    src="https://yolobackpackers.com/wp-content/uploads/2023/06/cropped-yolo-logo-18.png.webp"
                     className="object-contain max-w-[70%]"
                     />
                   </div>
@@ -45,10 +45,16 @@ const MobileNavbar = () => {
                   {/* Mobile Navigation section */}
                   <Accordion type="single" collapsible className="w-full gap-2">
                     {navbarRoutes?.map((item)=>(
-                      <AccordionItem value={item.id}>
+                      <AccordionItem key={item.id} value={item.id}>
                       <AccordionTrigger className="py-3" >
                         <TypographyH4 title={item.label}/>
                       </AccordionTrigger>
+
+                      <AccordionContent className="flex flex-col gap-2">
+                      {item?.dropdownItems?.map((ele)=>(
+                        <TypographyH5 key={ele.id} className="hover:text-primary-foreground flex flex-col" title={ele?.title}/>
+                      ))}
+                      </AccordionContent>
                     </AccordionItem>
                     ))}
                   </Accordion>

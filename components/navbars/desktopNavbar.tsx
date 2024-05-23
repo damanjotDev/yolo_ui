@@ -1,4 +1,4 @@
-
+'use client'
 import { motion } from "@/app/utils"
 import { TypographyH1, TypographyH3, TypographyH4, TypographyH5, TypographyP } from "@/components/ui/Typography";
 
@@ -13,7 +13,7 @@ const DesktopNavbar = () => {
   const navbarRoutes = useNavbarRoutes();
   const socialLinkRoutes =  useSocialLink();
   const pathname = usePathname();
-  const {scrolled} = useScroll();
+  // const {scrolled} = useScroll();
 
 
 
@@ -95,7 +95,9 @@ const DesktopNavbar = () => {
               items-center">
 
                 {navbarRoutes?.map((item)=>(
-                  <motion.div className="
+                  <motion.div 
+                  key={item.id}
+                  className="
                   relative
                   flex
                   flex-col
@@ -110,8 +112,11 @@ const DesktopNavbar = () => {
                     <div className="
                     flex
                     items-center
-                    gap-2">
-                      <TypographyH4 title={item.label}/>
+                    gap-2
+                    transition-all 
+                    duration-500 
+                    group-hover:text-primary">
+                      <TypographyP title={item.label}/>
                       <FaChevronDown 
                       size={15} 
                       className="
@@ -126,27 +131,58 @@ const DesktopNavbar = () => {
                       w-full
                       borber-b
                       border-[2px]
-                      border-primary-foreground"
+                      border-primary"
                       variants={textMotion}/>
+
+                       {/* Drop down section */}
+  
+                    {/* <motion.div className={cn(`
+                    hidden
+                    absolute
+                    w-auto
+                    z-50
+                    top-[100%]
+                    left-0
+                    flex-col
+                    group-hover:flex`)}
+                    variants={dropDownMotion}>
+                     <div className={cn(`
+                     bg-background 
+                     shadow-lg 
+                     rounded-lg
+                     flex
+                     flex-col 
+                     gap-2 ${item?.dropdownItems?.length && "p-5"}`)}>
+                          {item?.dropdownItems?.map((ele)=>(
+                          
+                              <motion.div 
+                              key={ele.id}
+                              className="
+                                flex
+                                items-center
+                                w-[150px]
+                                gap-2"
+                                initial="rest" 
+                                whileHover="hover" 
+                                animate="rest"
+                                onClick={ele.navigate}>
+                                  <motion.div className="
+                                  borber-b
+                                  border-primary"
+                                  variants={textMotion1}/>
+                                  <div className="
+                                  flex
+                                  items-center
+                                  justify-center">
+                                    <TypographyP className="hover:text-primary" title={ele?.title}/>
+                                  </div>
+                                </motion.div>
+                            
+                          ))}
+                     </div>
+                    </motion.div> */}
                   </motion.div> 
                 ))}
-          </div>
-
-          {/* Social links */}
-
-          <div className="
-          flex
-          items-center
-          gap-3">
-            {socialLinkRoutes?.map(({id, icon: Icon})=> 
-            <Icon 
-            size={18} 
-            className="
-            mt-[-6px] 
-            text-border
-            transition-all
-            cursor-pointer
-            hover:text-primary-foreground"/> )}
           </div>
 
           {/* Free Quote */}
@@ -161,14 +197,12 @@ const DesktopNavbar = () => {
             py-3
             px-6
             gap-3
-            bg-muted
             rounded-md
             group
-            text-primary-foreground
+            text-white
             transition-all
             duration-200
-            hover:text-white
-            hover:bg-primary
+            bg-primary
             ">
               <TypographyH5 className="font-[600]" title="Free Quote"/>
               <GoArrowRight 

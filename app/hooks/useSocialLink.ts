@@ -1,3 +1,4 @@
+'use client'
 import { useMemo } from "react"
 import { RoutesName } from "../utils/constant"
 import { MdOutlineAnalytics, RxDashboard, FaFacebookF, FaTwitter, FaInstagram  } from "../utils/icons"

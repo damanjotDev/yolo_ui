@@ -37,8 +37,8 @@ const Navbar = () => {
              items-center
             ">
           <img
-            src="https://www.devronins.com/images/DevRonins.png"
-            className="object-contain w-[100%]"
+            src="https://yolobackpackers.com/wp-content/uploads/2023/06/cropped-yolo-logo-18.png.webp"
+            className="object-contain w-[100%] h-[50px]"
           />
         </div>
 

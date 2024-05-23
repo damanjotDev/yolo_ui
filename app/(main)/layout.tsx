@@ -3,6 +3,7 @@ import { Oswald } from 'next/font/google'
 import '../globals.css'
 import StoreProviders from '../store/storeProvider'
 import { Navbar } from '@/components/navbars/navbar';
+import { ScrollToTop } from '@/components/scrollToTop/scrollToTop';
 
 const inter = Oswald({
   subsets: ['latin'],
@@ -23,6 +24,7 @@ export default function RootLayout({
     <html lang="en" className=''>
       <body className={`${inter.className}`}>
         <StoreProviders>
+          <ScrollToTop/>
           <Navbar/>
           {children}
         </StoreProviders>
