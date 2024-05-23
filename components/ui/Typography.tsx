@@ -7,7 +7,7 @@ interface TypographyProps {
 
 export function TypographyH1({title="hello", className}: TypographyProps) {
     return (
-        <h1 className={cn("scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl",className)}>
+        <h1 className={cn("scroll-m-20 text-[80px] font-extrabold tracking-tight lg:text-[100px]",className)}>
             {title}
         </h1>
     )
@@ -32,7 +32,7 @@ export function TypographyH3({title="hello", className=""}: TypographyProps) {
 
 export function TypographyH4({title="hello", className=""}: TypographyProps) {
     return (
-        <h4 className={cn("scroll-m-20 text-xl font-semibold tracking-tight",className)}>
+        <h4 className={cn("scroll-m-20 text-xl font-light tracking-tight",className)}>
             {title}
         </h4>
     )
@@ -48,7 +48,7 @@ export function TypographyH5({title="hello", className=""}: TypographyProps) {
 
 export function TypographyP({title="hello", className=""}: TypographyProps) {
     return (
-        <p className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}>
+        <p className={cn("text-sm leading-7 [&:not(:first-child)]:mt-6", className)}>
             {title}
         </p>
     )

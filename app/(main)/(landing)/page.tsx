@@ -1,25 +1,31 @@
 'use client'
-import React from "react";
+import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
 import { useAppDispatch, useTypedSelector } from "@/app/store/store";
+import { Home } from "@/components/home/home";
+import { getAbouts } from "@/app/services";
 
-function HomePage() {
+function Page() {
   const dispatch = useAppDispatch();
-  const { adminDetailsLoading, adminDetails, error } = useTypedSelector((state) => state.Admin);
+  const { aboutsLoading} = useTypedSelector((state) => state.About);
 
+  useEffect(()=>{
+    dispatch(getAbouts())
+  },[]);
 
   return (
     <div
       className="
-      h-full 
+      w-full
+      h-auto
       flex
-      flex-row
+      flex-col
       text-[70px]
       text-primary"
     >
-      Escape to Prasonisi
+      <Home/>
     </div>
   );
 }
 
-export default HomePage;
+export default Page;

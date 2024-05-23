@@ -17,7 +17,6 @@ const Navbar = () => {
           top-0
           z-[50]
           w-full
-          shadow-lg
           flex
           items-center
           justify-between

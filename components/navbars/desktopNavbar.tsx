@@ -115,6 +115,7 @@ const DesktopNavbar = () => {
                     gap-2
                     transition-all 
                     duration-500 
+                    text-background
                     group-hover:text-primary">
                       <TypographyP title={item.label}/>
                       <FaChevronDown 
@@ -122,8 +123,6 @@ const DesktopNavbar = () => {
                       className="
                       mt-2 
                       transition-all 
-                      duration-500 
-                      ease-in-out 
                       group-hover:rotate-180"/>
                     </div>
   

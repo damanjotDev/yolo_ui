@@ -21,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className=''>
-      <body className={`${inter.className}`}>
+    <html lang="en">
+      <body className={`${inter.className} p-0 m-0`}>
         <StoreProviders>
           <ScrollToTop/>
           <Navbar/>
