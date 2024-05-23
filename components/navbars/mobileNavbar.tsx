@@ -38,7 +38,7 @@ const MobileNavbar = () => {
                       mt-4">
                     <img
                     src="https://yolobackpackers.com/wp-content/uploads/2023/06/cropped-yolo-logo-18.png.webp"
-                    className="object-contain max-w-[70%]"
+                    className="object-contain w-[auto] h-[50px]"
                     />
                   </div>
 

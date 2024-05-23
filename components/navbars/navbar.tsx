@@ -23,8 +23,7 @@ const Navbar = () => {
           h-auto
           px-5
           py-3`}
-          animate={{ background: scrolled?'white':'transparent' }}
-          transition={{ duration: 0.4, delay: 0.5 }}>
+          animate={{ background: scrolled?'white':'transparent' }}>
             <div className="
             w-full
             lg:mx-auto
@@ -44,7 +43,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Navigation section  for Desktop*/}
-                <DesktopNavbar/>
+                <DesktopNavbar scrolled={scrolled}/>
 
                 {/* Navigation section for mobile */}
                 <MobileNavbar/>

@@ -41,7 +41,8 @@ export const HomeAbout = () => {
             md:gap-20
             gap-10">
                 <div className="
-                w-1/2
+                w-full
+                md:w-1/2
                 flex
                 flex-col
                 items-start
@@ -120,7 +121,8 @@ export const HomeAbout = () => {
                 </div>
 
                 <div className="
-                w-1/2
+                w-full
+                md:w-1/2
                 flex
                 items-start
                 justify-center">
@@ -128,7 +130,7 @@ export const HomeAbout = () => {
                     flex
                     items-center
                     w-full
-                    h-full">
+                    h-[500px]">
                         {/* Image Section */}
                         <Tilt className="w-full h-full relative">
                             {!aboutDetails?.images?.length ?

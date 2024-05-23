@@ -9,7 +9,7 @@ import { useSocialLink, useScroll} from "@/app/hooks/index";
 import { usePathname } from "next/navigation";
 
 
-const DesktopNavbar = () => {
+const DesktopNavbar = ({scrolled}:{scrolled?:boolean}) => {
   const navbarRoutes = useNavbarRoutes();
   const socialLinkRoutes =  useSocialLink();
   const pathname = usePathname();
@@ -109,14 +109,7 @@ const DesktopNavbar = () => {
                   whileHover="hover" 
                   animate="rest">
                     
-                    <div className="
-                    flex
-                    items-center
-                    gap-2
-                    transition-all 
-                    duration-500 
-                    text-background
-                    group-hover:text-primary">
+                    <div className= {cn(" flex items-center gap-2 transition-all  duration-500  text-background group-hover:text-primary",scrolled&&"text-foreground")} >
                       <TypographyP title={item.label}/>
                       <FaChevronDown 
                       size={15} 
