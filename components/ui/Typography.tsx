@@ -1,3 +1,4 @@
+'use client'
 import { cn } from "../../lib/utils"
 
 interface TypographyProps {
@@ -40,7 +41,7 @@ export function TypographyH4({title="hello", className=""}: TypographyProps) {
 
 export function TypographyH5({title="hello", className=""}: TypographyProps) {
     return (
-        <h4 className={cn("scroll-m-20 text-md font-semibold tracking-tight", className)}>
+        <h4 className={cn("scroll-m-20 text-sm font-semibold tracking-tight", className)}>
             {title}
         </h4>
     )

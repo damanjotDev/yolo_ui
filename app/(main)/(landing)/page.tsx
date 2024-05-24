@@ -1,17 +1,13 @@
 'use client'
-import React, { useEffect } from "react";
-import dynamic from "next/dynamic";
-import { useAppDispatch, useTypedSelector } from "@/app/store/store";
 import { Home } from "@/components/home/home";
-import { getAbouts } from "@/app/services";
+import { getAboutsWithServer, getPropertiesWithServer } from "@/app/services";
+import { AboutsModal, PropertiesModal } from "@/app/utils/modals";
+import { Navbar } from "@/components/navbars/navbar";
 
-function Page() {
-  const dispatch = useAppDispatch();
-  const { aboutsLoading} = useTypedSelector((state) => state.About);
 
-  useEffect(()=>{
-    dispatch(getAbouts())
-  },[]);
+async function Page() {
+  const abouts: AboutsModal = await getAboutsWithServer()
+  const properties: PropertiesModal = await getPropertiesWithServer()
 
   return (
     <div
@@ -23,7 +19,8 @@ function Page() {
       text-[70px]
       text-primary"
     >
-      <Home/>
+      <Navbar/>
+      <Home abouts={abouts} properties={properties}/>
     </div>
   );
 }

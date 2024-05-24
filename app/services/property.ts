@@ -94,3 +94,15 @@ export const removeProperty = createAsyncThunk<any, any>('PropertySlice/removePr
         return thunkApi.rejectWithValue(error.response?.status)
     }
 })
+
+
+export const getPropertiesWithServer = async () => {
+    try {
+        const {data} = await fetchProperties({})
+        return data.data
+    } catch (err) {
+        const error: any = err;
+        console.log('err', error)
+        throw new Error('Something went wrong')
+    }
+  }

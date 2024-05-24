@@ -49,7 +49,9 @@ export const HomeCareousell = () => {
         speed: 2000,
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: true
+        autoplay: true,
+        pauseOnHover: false,
+        cssEase: 'linear',
     };
 
     useEffect(() => {
@@ -63,7 +65,7 @@ export const HomeCareousell = () => {
           h-full`}>
             <Slider {...settings}>
                 {imageData.map((item) => (
-                    <div className="relative w-full h-[calc(100vh)] bg-yellow-500"
+                    <div className="relative w-full h-[calc(100vh)]"
                     key={item.id}>
                         <Image
                             src={item.imageUrl}

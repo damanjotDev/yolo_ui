@@ -9,22 +9,17 @@ import { TypographyH1, TypographyH2, TypographyH4, TypographyH5, TypographyP } f
 import { GoArrowRight, RoutesName, Tilt } from "@/app/utils";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { AboutsModal } from "@/app/utils/modals";
 
 
 
 
-export const HomeAbout = () => {
+const HomeAbout = ({ abouts }: { abouts: AboutsModal }) => {
 
     const pathname = usePathname();
     const navigate = useRouter();
 
-    const dispatch = useAppDispatch();
-    const { aboutsLoading, abouts, error, aboutDetails } = useTypedSelector((state) => state.About);
-
-    useEffect(() => {
-        const about = abouts?.rows?.find((ele) => ele?.isCover == true)
-        dispatch(AboutActions.setAboutDetails(about ? about : null))
-    }, [aboutsLoading])
+    const about = abouts?.rows?.find((ele) => ele?.isCover == true)
 
     return (
         <div className="
@@ -56,7 +51,7 @@ export const HomeAbout = () => {
                         whileInView={{ x: 0 }}
                         transition={{ duration: 1, ease: 'easeInOut' }}
                         viewport={{ once: true }}>
-                        <TypographyH2 title={aboutDetails?.title || "loading"} />
+                        <TypographyH2 title={about?.title || "loading"} />
                     </motion.div>
 
                     <motion.div
@@ -74,7 +69,7 @@ export const HomeAbout = () => {
                         font-roboto-condensed 
                         text-sm 
                         tracking-wider"
-                            dangerouslySetInnerHTML={{ __html: aboutDetails?.description || "loading" }} />
+                            dangerouslySetInnerHTML={{ __html: about?.description || "loading" }} />
                     </motion.div>
 
                     <motion.div
@@ -87,7 +82,7 @@ export const HomeAbout = () => {
                         whileInView={{ x: 0, opacity: 1 }}
                         transition={{ duration: 1, ease: 'easeInOut', delay: 0.5 }}
                         viewport={{ once: true }}>
-                         <button className="
+                        <button className="
                         flex
                         items-center
                         py-3
@@ -101,21 +96,21 @@ export const HomeAbout = () => {
                         border-2
                         border-primary
                         hover:bg-primary"
-                        onClick={()=> navigate.push(RoutesName.Abouts)}>
-                            <TypographyP 
-                            className="
+                            onClick={() => navigate.push(RoutesName.Abouts)}>
+                            <TypographyP
+                                className="
                             font-[600] 
                             text-primary
-                            group-hover:text-background" title="MORE DETAILS"/>
+                            group-hover:text-background" title="MORE DETAILS" />
                             <GoArrowRight
-                            size={20}
-                            className="
-                            transition-all
-                            duration-300
-                            rotate-[-45deg]
-                            text-primary
-                            group-hover:rotate-0
-                            group-hover:text-background"/>
+                                size={20}
+                                className="
+                                transition-all
+                                duration-300
+                                rotate-[-45deg]
+                                text-primary
+                                group-hover:rotate-0
+                                group-hover:text-background"/>
                         </button>
                     </motion.div>
                 </div>
@@ -133,32 +128,32 @@ export const HomeAbout = () => {
                     h-[500px]">
                         {/* Image Section */}
                         <Tilt className="w-full h-full relative">
-                            {!aboutDetails?.images?.length ?
+                            {!about?.images?.length ?
                                 null
-                                : aboutDetails?.images?.length === 2 ?
-                                   <>
-                                    <div
-                                    className={cn('absolute top-0 left-0 w-[80%]')}>
+                                : about?.images?.length === 2 ?
+                                    <>
+                                        <div
+                                            className={cn('absolute top-0 left-0 w-[80%]')}>
+                                            <img
+                                                src={about?.images[0]?.imageUrl || ""}
+                                                alt={'hello'}
+                                                className='w-[100%] h-[100%] object-contain' />
+                                        </div>
+                                        <div
+                                            className={cn('absolute top-[30%] bottom-[0%] right-0 w-[80%]')}>
+                                            <img
+                                                src={about?.images[1]?.imageUrl || ""}
+                                                alt={'hello'}
+                                                className='w-[100%] h-[100%]' />
+                                        </div>
+                                    </>
+                                    : <div
+                                        className={cn('absolute w-[100%] h-[auto] top-0')}>
                                         <img
-                                        src={aboutDetails?.images[0]?.imageUrl || ""}
-                                        alt={'hello'}
-                                        className='w-[100%] h-[100%] object-contain' />
-                                    </div> 
-                                    <div
-                                    className={cn('absolute top-[30%] bottom-[0%] right-0 w-[80%]')}>
-                                        <img
-                                        src={aboutDetails?.images[1]?.imageUrl || ""}
-                                        alt={'hello'}
-                                        className='w-[100%] h-[100%]' />
-                                    </div> 
-                                   </>
-                                :   <div
-                                    className={cn('absolute w-[100%] h-[auto] top-0')}>
-                                        <img
-                                        src={aboutDetails?.images[0]?.imageUrl || ""}
-                                        alt={'hello'}
-                                        className='w-[100%] h-[100%] object-contain' />
-                                    </div> 
+                                            src={about?.images[0]?.imageUrl || ""}
+                                            alt={'hello'}
+                                            className='w-[100%] h-[100%] object-contain' />
+                                    </div>
                             }
                         </Tilt>
                     </div>
@@ -168,3 +163,4 @@ export const HomeAbout = () => {
     )
 }
 
+export { HomeAbout } 

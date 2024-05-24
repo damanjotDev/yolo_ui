@@ -19,7 +19,7 @@ const axiosInstance: AxiosInstance = axios.create(apiConfig);
 axiosInstance.interceptors.request.use((req: any) => {
   try {
 
-    const accessToken = localStorage.getItem('accessToken');
+    const accessToken = true
     if (accessToken) {
       req.headers.Authorization = `${accessToken}`;
     }
@@ -160,7 +160,6 @@ export const fileUpload = (data: any) => axiosInstance.post('/v1/fileUpload', da
   onUploadProgress: (progressEvent) => {
     if(progressEvent&&progressEvent.total){
        const progress = Math.round((progressEvent.loaded / progressEvent.total) * 100);
-       console.log('progress', progress)
     }
    }
 });

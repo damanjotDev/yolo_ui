@@ -1,17 +1,22 @@
 export interface AboutModal {
-    id: string;
-    email: string;
-    title: string;
-    images: ImageModal[];
-    awards: ImageModal[];
-    description: string;
-    coordinates : CoordinateModal;
-    contactNo: number;
-    socialLinks: SocialLinkModal[];
-    isCover: boolean;
-    createdAt: Date;
-    updatedAt: Date;
-  }
+  id: string;
+  email: string;
+  title: string;
+  images: ImageModal[];
+  awards: ImageModal[];
+  description: string;
+  coordinates: CoordinateModal;
+  contactNo: number;
+  socialLinks: SocialLinkModal[];
+  isCover: boolean;
+  createdAt: Date;
+  updatedAt: Date;
+}
+export interface AboutsModal {
+  count: number;
+  rows: AboutModal[]
+}
+
 
 interface ImageModal {
   isCover: boolean;
@@ -22,8 +27,8 @@ interface ImageModal {
 }
 
 interface SocialLinkModal {
-    type: 'twitter' | 'facebook' | 'linkedin' | 'instagram';
-    link : string;
+  type: 'twitter' | 'facebook' | 'linkedin' | 'instagram';
+  link: string;
 }
 
 interface CoordinateModal {

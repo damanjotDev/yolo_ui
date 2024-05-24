@@ -183,7 +183,7 @@ const DesktopNavbar = ({scrolled}:{scrolled?:boolean}) => {
           flex
           item-center
           ">
-            <button className="
+            <div className="
             flex
             items-center
             py-3
@@ -204,7 +204,7 @@ const DesktopNavbar = ({scrolled}:{scrolled?:boolean}) => {
               duration-300
               rotate-[-45deg]
               group-hover:rotate-0"/>
-            </button>
+            </div>
           </div>
         </div>
   )

@@ -1,14 +1,19 @@
 export interface PropertyModal {
-    id: string;
-    email: string;
-    title: string;
-    images: ImageModal[];
-    description: string;
-    coordinates : CoordinateModal;
-    contactNo: number;
-    createdAt: Date;
-    updatedAt: Date;
-  }
+  id: string;
+  email: string;
+  title: string;
+  images: ImageModal[];
+  description: string;
+  coordinates: CoordinateModal;
+  contactNo: number;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface PropertiesModal {
+  count: number;
+  rows: PropertyModal[]
+}
 
 interface ImageModal {
   isCover: boolean;

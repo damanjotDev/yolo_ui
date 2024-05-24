@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Oswald } from 'next/font/google'
 import '../globals.css'
 import StoreProviders from '../store/storeProvider'
-import { Navbar } from '@/components/navbars/navbar';
 import { ScrollToTop } from '@/components/scrollToTop/scrollToTop';
 
 const inter = Oswald({
@@ -25,7 +24,6 @@ export default function RootLayout({
       <body className={`${inter.className} p-0 m-0`}>
         <StoreProviders>
           <ScrollToTop/>
-          <Navbar/>
           {children}
         </StoreProviders>
       </body>

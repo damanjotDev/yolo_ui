@@ -2,6 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit"
 import { toast } from "@/components/ui/use-toast";
 import { createAbout, deleteAbout, fetchAbout, fetchAbouts, updateAbout } from "../api/axios";
 import { RoutesName } from "../utils/constant";
+import { AboutsModal } from "../utils/modals";
 
 export const addAbout = createAsyncThunk<any, any>('AboutSlice/addAbout', async (params, thunkApi) => {
     try {
@@ -94,3 +95,14 @@ export const removeAbout = createAsyncThunk<any, any>('AboutSlice/removeAbout', 
         return thunkApi.rejectWithValue(error.response?.status)
     }
 })
+
+export const getAboutsWithServer = async () => {
+    try {
+        const {data} = await fetchAbouts({})
+        return data.data
+    } catch (err) {
+        const error: any = err;
+        console.log('err', error)
+        throw new Error('Something went wrong')
+    }
+  }

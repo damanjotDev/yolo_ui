@@ -1,18 +1,12 @@
 'use client'
-import { usePathname } from "next/navigation";
-import {useScroll} from "@/app/hooks";
-import { motion } from "@/app/utils/animation";
-import { useTypedSelector } from "@/app/store/store";
 import { HomeCareousell } from "./careousel/careousel";
-import { useEffect } from "react";
-import { HomeAbout } from "./about/about";
+import dynamic from "next/dynamic";
+import { AboutsModal, PropertiesModal } from "@/app/utils/modals";
+import {HomeAbout} from "./about/about";
 
 
+const Home = ({abouts,properties}:{abouts: AboutsModal, properties: PropertiesModal}) => {
 
-const Home = () => {
-
-  const pathname  = usePathname();
-  const {scrolled} = useScroll();
   return (
       <div className={`
           h-full
@@ -21,7 +15,7 @@ const Home = () => {
           flex-col
           gap-20`}>
             <HomeCareousell/>
-            <HomeAbout/>
+            <HomeAbout  abouts={abouts}/>
       </div>
   )
 }
