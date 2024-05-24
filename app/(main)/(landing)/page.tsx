@@ -1,13 +1,11 @@
 'use client'
 import { Home } from "@/components/home/home";
 import { getAboutsWithServer, getPropertiesWithServer } from "@/app/services";
-import { AboutsModal, PropertiesModal } from "@/app/utils/modals";
 import { Navbar } from "@/components/navbars/navbar";
 
 
 async function Page() {
-  const abouts: AboutsModal = await getAboutsWithServer()
-  const properties: PropertiesModal = await getPropertiesWithServer()
+  const abouts = await getAboutsWithServer()
 
   return (
     <div
@@ -20,7 +18,7 @@ async function Page() {
       text-primary"
     >
       <Navbar/>
-      <Home abouts={abouts} properties={properties}/>
+      <Home abouts = {abouts}/>
     </div>
   );
 }

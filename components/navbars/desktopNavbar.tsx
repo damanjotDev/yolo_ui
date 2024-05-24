@@ -128,7 +128,7 @@ const DesktopNavbar = ({scrolled}:{scrolled?:boolean}) => {
 
                        {/* Drop down section */}
   
-                    {/* <motion.div className={cn(`
+                    <motion.div className={cn(`
                     hidden
                     absolute
                     w-auto
@@ -166,13 +166,13 @@ const DesktopNavbar = ({scrolled}:{scrolled?:boolean}) => {
                                   flex
                                   items-center
                                   justify-center">
-                                    <TypographyP className="hover:text-primary" title={ele?.title}/>
+                                    <TypographyP className="text-foreground hover:text-primary" title={ele?.title}/>
                                   </div>
                                 </motion.div>
                             
                           ))}
                      </div>
-                    </motion.div> */}
+                    </motion.div>
                   </motion.div> 
                 ))}
           </div>

@@ -4,6 +4,7 @@ import {useScroll} from "@/app/hooks";
 import { motion } from "@/app/utils/animation";
 import { DesktopNavbar } from "./desktopNavbar";
 import { MobileNavbar } from "./mobileNavbar";
+import { PropertiesModal } from "@/app/utils/modals";
 
 
 const Navbar = () => {
