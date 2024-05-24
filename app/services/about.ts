@@ -103,6 +103,6 @@ export const getAboutsWithServer = async () => {
     } catch (err) {
         const error: any = err;
         console.log('err', error)
-        throw new Error('Something went wrong')
+        // throw new Error('Something went wrong')
     }
   }

@@ -50,9 +50,15 @@ const MobileNavbar = () => {
                         <TypographyH4 title={item.label}/>
                       </AccordionTrigger>
 
-                      <AccordionContent className="flex flex-col gap-2">
+                      <AccordionContent className="flex flex-col gap-1">
                       {item?.dropdownItems?.map((ele)=>(
-                        <TypographyH5 key={ele.id} className="hover:text-primary-foreground flex flex-col" title={ele?.title}/>
+                        <div className="
+                        flex
+                        items-start
+                        justify-center"
+                        key={ele.id}>
+                          <TypographyP className="text-foreground hover:text-primary" title={ele?.title}/>
+                        </div>
                       ))}
                       </AccordionContent>
                     </AccordionItem>
