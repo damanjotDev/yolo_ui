@@ -65,7 +65,7 @@ const MobileNavbar = ({navbarRoutes}:{navbarRoutes: NavbarRoutesProps[]}) => {
                         <div className="
                         flex
                         items-start
-                        justify-center"
+                        justify-start"
                         key={ele.id}>
                           <TypographyP className="text-foreground hover:text-primary" title={ele?.title}/>
                         </div>

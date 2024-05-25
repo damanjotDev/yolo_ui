@@ -8,15 +8,13 @@ import { MdOutlineAnalytics, RoutesName, RxDashboard } from "@/app/utils";
 import DesktopNavbar from "./desktopNavbar";
 import MobileNavbar from "./mobileNavbar";
 
-
-
 const Navbar = ({properties}:{properties: PropertiesModal}) => {
 
   const pathname = usePathname();
   const navigate = useRouter();
   const {scrolled} = useScroll();
   
-  const navbarRoutes =  [
+  const navbarRoutes=  [
           {
               id: '1',
               navigate: () => navigate.push(RoutesName.Home),
@@ -55,17 +53,17 @@ const Navbar = ({properties}:{properties: PropertiesModal}) => {
               label: 'Adventure Awaits', 
               dropdownItems: [
                   {
-                      id:1, 
+                      id:'1', 
                       title: 'Blog', 
                       navigate: ()=> navigate.push(RoutesName.Adventure)
                   },
                   {
-                      id:2, 
+                      id:'2', 
                       title: 'Franchise', 
                       navigate: ()=> navigate.push(RoutesName.Franchise)
                   },
                   {
-                      id:3, 
+                      id:'3', 
                       title: 'Contact Us', 
                       navigate: ()=> navigate.push(RoutesName.Contact)
                   }
