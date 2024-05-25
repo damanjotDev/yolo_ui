@@ -1,11 +1,11 @@
-'use client'
+
 import { Home } from "@/components/home/home";
 import { getAboutsWithServer, getPropertiesWithServer } from "@/app/services";
 import { Navbar } from "@/components/navbars/navbar";
 
 
 async function Page() {
-  const abouts = await getAboutsWithServer()
+  const [abouts, properties] = await Promise.all([getAboutsWithServer(), getPropertiesWithServer()])
 
   return (
     <div
@@ -17,7 +17,7 @@ async function Page() {
       text-[70px]
       text-primary"
     >
-      <Navbar/>
+      <Navbar properties = {properties}/>
       <Home abouts = {abouts}/>
     </div>
   );

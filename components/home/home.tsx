@@ -1,5 +1,5 @@
 'use client'
-import { HomeCareousell } from "./careousel/careousel";
+import HomeCareousell  from "./careousel/careousel";
 import dynamic from "next/dynamic";
 import { AboutsModal} from "@/app/utils/modals";
 import {HomeAbout} from "./about/about";

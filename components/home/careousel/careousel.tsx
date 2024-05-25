@@ -4,9 +4,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { usePathname } from "next/navigation";
 import { motion } from "@/app/utils/animation";
-import { useAppDispatch, useTypedSelector } from "@/app/store/store";
-import { useEffect } from "react";
-import { AboutActions } from "@/app/reducers";
 
 import image1 from "@/app/assets/images/home1.jpg"
 import image2 from "@/app/assets/images/home2.jpeg"
@@ -37,12 +34,9 @@ const imageData = [
 
 
 
-export const HomeCareousell = () => {
+ const HomeCareousell = () => {
 
     const pathname = usePathname();
-
-    const dispatch = useAppDispatch();
-    const { aboutsLoading, abouts, error, aboutDetails } = useTypedSelector((state) => state.About);
 
     const settings = {
         infinite: true,
@@ -53,12 +47,6 @@ export const HomeCareousell = () => {
         pauseOnHover: false,
         cssEase: 'linear',
     };
-
-    useEffect(() => {
-        const about = abouts?.rows?.find((ele) => ele?.isCover == true)
-        dispatch(AboutActions.setAboutDetails(about ? about : null))
-    }, [aboutsLoading])
-
     return (
         <div className={`
           w-full
@@ -116,3 +104,4 @@ export const HomeCareousell = () => {
     )
 }
 
+export default HomeCareousell

@@ -1,19 +1,25 @@
 'use client'
 import { motion } from "@/app/utils"
 import { TypographyH1, TypographyH3, TypographyH4, TypographyH5, TypographyP } from "@/components/ui/Typography";
-
-import { useNavbarRoutes } from "@/app/hooks/useNavbarRoutes";
 import { FaChevronDown, GoArrowRight} from "@/app/utils/icons"
 import { cn } from "../../lib/utils";
 import { useSocialLink, useScroll} from "@/app/hooks/index";
 import { usePathname } from "next/navigation";
 
+interface NavbarRoutesProps {
+  id: string;
+  navigate: () => void;
+  icon: any;
+  active: boolean;
+  label: string;
+  dropdownItems?: undefined | {
+    id: string;
+    title: string;
+    navigate: () => void;
+  }[];
+}
 
-const DesktopNavbar = ({scrolled}:{scrolled?:boolean}) => {
-  const navbarRoutes = useNavbarRoutes();
-  const socialLinkRoutes =  useSocialLink();
-  const pathname = usePathname();
-  // const {scrolled} = useScroll();
+const DesktopNavbar = ({scrolled, navbarRoutes}:{scrolled?:boolean, navbarRoutes: NavbarRoutesProps[]}) => {
 
 
 
@@ -90,7 +96,8 @@ const DesktopNavbar = ({scrolled}:{scrolled?:boolean}) => {
             gap-5">
 
           {/* Page Navigation */}
-          <div className="
+          <div 
+          className="
               flex
               items-center">
 
@@ -128,7 +135,8 @@ const DesktopNavbar = ({scrolled}:{scrolled?:boolean}) => {
 
                        {/* Drop down section */}
   
-                    <motion.div className={cn(`
+                    <motion.div 
+                    className={cn(`
                     hidden
                     absolute
                     w-auto
@@ -138,7 +146,8 @@ const DesktopNavbar = ({scrolled}:{scrolled?:boolean}) => {
                     flex-col
                     group-hover:flex`)}
                     variants={dropDownMotion}>
-                     <div className={cn(`
+                     <div 
+                     className={cn(`
                      bg-background 
                      shadow-lg 
                      rounded-lg
@@ -158,15 +167,17 @@ const DesktopNavbar = ({scrolled}:{scrolled?:boolean}) => {
                                 whileHover="hover" 
                                 animate="rest"
                                 onClick={ele.navigate}>
-                                  <motion.div className="
+                                  <motion.div 
+                                  className="
                                   borber-b
                                   border-primary"
                                   variants={textMotion1}/>
-                                  <div className="
+                                  <div 
+                                  className="
                                   flex
                                   items-center
                                   justify-center">
-                                    <TypographyP className="text-foreground hover:text-primary" title={ele?.title}/>
+                                    <TypographyP  className="text-foreground hover:text-primary" title={ele?.title}/>
                                   </div>
                                 </motion.div>
                             
@@ -210,4 +221,4 @@ const DesktopNavbar = ({scrolled}:{scrolled?:boolean}) => {
   )
 }
 
-export { DesktopNavbar }
+export default DesktopNavbar 

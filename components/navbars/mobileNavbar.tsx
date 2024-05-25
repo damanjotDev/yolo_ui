@@ -15,12 +15,22 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../../components/ui/accordion"
-import { useNavbarRoutes } from "@/app/hooks/useNavbarRoutes";
 import { FiMenu } from "@/app/utils/icons";
 
+interface NavbarRoutesProps {
+  id: string;
+  navigate: () => void;
+  icon: any;
+  active: boolean;
+  label: string;
+  dropdownItems?: undefined | {
+    id: string;
+    title: string;
+    navigate: () => void;
+  }[];
+}
 
-const MobileNavbar = () => {
-  const navbarRoutes = useNavbarRoutes();
+const MobileNavbar = ({navbarRoutes}:{navbarRoutes: NavbarRoutesProps[]}) => {
 
   return (
         <div className="
@@ -71,4 +81,4 @@ const MobileNavbar = () => {
   )
 }
 
-export {MobileNavbar }
+export default MobileNavbar 

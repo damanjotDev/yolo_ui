@@ -1,3 +1,4 @@
+'use client'
 import { FaChevronDown, FaFacebookF, FaTwitter, FaInstagram, FaLongArrowAltRight, FaStar, FaCheckCircle, FaLink, FaLinkedinIn, FaAppStoreIos, FaGooglePlay, FaUpload, FaRegFileImage, FaRegFile } from "react-icons/fa";
 import { FaAngleDown, FaRegCircleUser, FaCheck, FaArrowRightLong, FaAngleRight, FaPlus } from "react-icons/fa6"
 import { IoClose, IoSettingsOutline, IoLogOutOutline, IoLocation, IoLocationOutline, IoPlanetOutline, IoSearch } from "react-icons/io5";
@@ -14,7 +15,6 @@ import { TbAward } from "react-icons/tb";
 import { SiNamecheap } from "react-icons/si";
 import {  } from "react-icons/fa";
 import { BsX } from "react-icons/bs";
-
 
 
 
