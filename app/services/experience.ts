@@ -94,3 +94,15 @@ export const removeExperience = createAsyncThunk<any, any>('ExperienceSlice/remo
         return thunkApi.rejectWithValue(error.response?.status)
     }
 })
+
+
+export const getExperiencesWithServer = async () => {
+    try {
+        const {data} = await fetchExperiences({})
+        return data.data
+    } catch (err) {
+        const error: any = err;
+        console.log('err', error)
+        // throw new Error('Something went wrong')
+    }
+  }

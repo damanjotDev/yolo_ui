@@ -65,9 +65,9 @@ const HomeServices = ({services}:{services: ServicesModal}) => {
                   <motion.div  
                   key={ele.id}
                   className='flex relative group w-full shadow-lg'
-                  initial={{x: 100, opacity: 0}}
+                  initial={{x: 200, opacity: 0}}
                   whileInView={{x:0, opacity: 1}}
-                  transition={{duration:1, ease: 'easeInOut'}}
+                  transition={{duration:1, ease: 'linear'}}
                   viewport={{once: true}}>
                     <div className='h-[370px] relative overflow-hidden hover:border-primary hover:border w-full'>
                       {/* Image Section */}
@@ -109,7 +109,7 @@ const HomeServices = ({services}:{services: ServicesModal}) => {
                           justify-center
                           ">
                             <div className='h-[75px] w-[75px] rounded-full border-primary border-[3px] p-1'>
-                              <img src={ele?.images?.[0]?.imageUrl} alt={'no service image'} className='h-full w-full rounded-full'/>
+                              <img src={ele?.images?.[0]?.imageUrl} alt={'no service image'} className='h-full w-full object-cover rounded-full'/>
                             </div>
                           </div>
                         </div>

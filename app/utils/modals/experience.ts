@@ -7,6 +7,12 @@ export interface ExperienceModal {
     updatedAt: Date;
   }
 
+export interface ExperiencesModal {
+  count: number;
+  rows: ExperienceModal[]
+}
+    
+
 interface ImageModal {
   isCover: boolean;
   name: string,
