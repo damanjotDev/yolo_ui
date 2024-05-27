@@ -19,6 +19,12 @@ export interface RoomModal {
     updatedAt: Date;
   }
 
+export interface RoomsModal {
+    count: number;
+    rows: RoomModal[]
+  }
+  
+
 interface ImageModal {
   isCover: boolean;
   name: string,

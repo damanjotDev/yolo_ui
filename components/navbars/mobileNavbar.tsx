@@ -35,7 +35,8 @@ const MobileNavbar = ({navbarRoutes}:{navbarRoutes: NavbarRoutesProps[]}) => {
   return (
         <div className="
         lg:hidden
-        block">
+        flex
+        ">
           <Sheet>
             <SheetTrigger><FiMenu size={30}/></SheetTrigger>
             <SheetContent side="left"  className="w-[300px] flex flex-col gap-1">

@@ -1,11 +1,12 @@
 'use client'
 import HomeCareousell  from "./careousel/careousel";
 import dynamic from "next/dynamic";
-import { AboutsModal} from "@/app/utils/modals";
+import { AboutsModal, RoomsModal} from "@/app/utils/modals";
 import {HomeAbout} from "./about/about";
+import { HomeRoom } from "./room/room";
 
 
-const Home = ({abouts}:{abouts: AboutsModal}) => {
+const Home = ({abouts, rooms}:{abouts: AboutsModal, rooms: RoomsModal}) => {
 
   return (
       <div className={`
@@ -16,6 +17,7 @@ const Home = ({abouts}:{abouts: AboutsModal}) => {
           gap-20`}>
             <HomeCareousell/>
             <HomeAbout  abouts={abouts}/>
+            <HomeRoom rooms = {rooms}/>
       </div>
   )
 }

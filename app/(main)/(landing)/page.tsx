@@ -1,11 +1,11 @@
 
 import { Home } from "@/components/home/home";
-import { getAboutsWithServer, getPropertiesWithServer } from "@/app/services";
+import { getAboutsWithServer, getPropertiesWithServer, getRoomsWithServer } from "@/app/services";
 import { Navbar } from "@/components/navbars/navbar";
 
 
 async function Page() {
-  const [abouts, properties] = await Promise.all([getAboutsWithServer(), getPropertiesWithServer()])
+  const [abouts, properties, rooms] = await Promise.all([getAboutsWithServer(), getPropertiesWithServer(), getRoomsWithServer()])
 
   return (
     <div
@@ -14,11 +14,10 @@ async function Page() {
       h-auto
       flex
       flex-col
-      text-[70px]
-      text-primary"
+      text-[70px]"
     >
       <Navbar properties = {properties}/>
-      <Home abouts = {abouts}/>
+      <Home abouts = {abouts} rooms = {rooms}/>
     </div>
   );
 }
