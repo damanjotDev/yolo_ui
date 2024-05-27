@@ -47,7 +47,7 @@ const HomeAbout = ({ abouts }: { abouts: AboutsModal }) => {
                     flex
                     items-center
                     text-black"
-                        initial={{ x: 300 }}
+                        initial={{ x: 200 }}
                         whileInView={{ x: 0 }}
                         transition={{ duration: 1, ease: 'easeInOut' }}
                         viewport={{ once: true }}>
@@ -60,16 +60,16 @@ const HomeAbout = ({ abouts }: { abouts: AboutsModal }) => {
                     items-center
                     justify-center
                     text-foreground"
-                        initial={{ x: 300, opacity: 0 }}
+                        initial={{ x: 200, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1 }}
-                        transition={{ duration: 1, ease: 'easeInOut', delay: 0.3 }}
+                        transition={{ duration: 1, ease: 'easeInOut'}}
                         viewport={{ once: true }}>
                         <div
-                            className="
+                        className="
                         font-roboto-condensed 
                         text-sm 
                         tracking-wider"
-                            dangerouslySetInnerHTML={{ __html: about?.description || "loading" }} />
+                        dangerouslySetInnerHTML={{ __html: about?.description || "loading" }} />
                     </motion.div>
 
                     <motion.div
@@ -78,9 +78,9 @@ const HomeAbout = ({ abouts }: { abouts: AboutsModal }) => {
                         items-center
                         justify-center
                         text-foreground"
-                        initial={{ x: 300, opacity: 0 }}
+                        initial={{ x: 200, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1 }}
-                        transition={{ duration: 1, ease: 'easeInOut', delay: 0.5 }}
+                        transition={{ duration: 1, ease: 'easeInOut'}}
                         viewport={{ once: true }}>
                         <button className="
                         flex
@@ -131,22 +131,22 @@ const HomeAbout = ({ abouts }: { abouts: AboutsModal }) => {
                             {!about?.images?.length ?
                                 null
                                 : about?.images?.length === 2 ?
-                                    <>
+                                    <div className="flex w-full h-full">
                                         <div
-                                            className={cn('absolute top-0 left-0 w-[80%]')}>
+                                            className={cn('absolute top-0 left-0 h-[60%] w-[80%]')}>
                                             <img
                                                 src={about?.images[0]?.imageUrl || ""}
                                                 alt={'hello'}
-                                                className='w-[100%] h-[100%] object-contain' />
+                                                className='w-full h-full object-cover' />
                                         </div>
                                         <div
-                                            className={cn('absolute top-[30%] bottom-[0%] right-0 w-[80%]')}>
-                                            <img
+                                            className={cn('absolute h-[60%] bottom-0 right-0 w-[80%]')}>
+                                             <img
                                                 src={about?.images[1]?.imageUrl || ""}
                                                 alt={'hello'}
-                                                className='w-[100%] h-[100%]' />
+                                                className='w-full h-full object-cover' />
                                         </div>
-                                    </>
+                                    </div>
                                     : <div
                                         className={cn('absolute w-[100%] h-[auto] top-0')}>
                                         <img
