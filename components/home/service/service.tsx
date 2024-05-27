@@ -65,8 +65,8 @@ const HomeServices = ({services}:{services: ServicesModal}) => {
                   <motion.div  
                   key={ele.id}
                   className='flex relative group w-full shadow-lg'
-                  initial={{x: 200, opacity: 0}}
-                  whileInView={{x:0, opacity: 1}}
+                  initial={{scale:0.5, opacity: 0}}
+                  whileInView={{scale:1, opacity: 1}}
                   transition={{duration:1, ease: 'linear'}}
                   viewport={{once: true}}>
                     <div className='h-[370px] relative overflow-hidden hover:border-primary hover:border w-full'>
