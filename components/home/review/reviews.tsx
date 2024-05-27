@@ -29,6 +29,8 @@ const HomeReviews = ({ reviews }: { reviews: ReviewsModal }) => {
         <div className="
         w-full
         flex
+        md:flex-row
+        flex-col
         items-center
         justify-between">
 
