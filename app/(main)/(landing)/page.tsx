@@ -2,15 +2,17 @@
 import { Home } from "@/components/home/home";
 import { getAboutsWithServer, getExperiencesWithServer, getPropertiesWithServer, getRoomsWithServer, getServicesWithServer } from "@/app/services";
 import { Navbar } from "@/components/navbars/navbar";
+import { getReviewsWithServer } from "@/app/services/review";
 
 
 async function Page() {
-  const [abouts, properties, rooms, services, experiences] = await Promise.all([
+  const [abouts, properties, rooms, services, experiences, reviews] = await Promise.all([
       getAboutsWithServer(), 
       getPropertiesWithServer(), 
       getRoomsWithServer(), 
       getServicesWithServer(),
-      getExperiencesWithServer()
+      getExperiencesWithServer(),
+      getReviewsWithServer()
     ]);
 
   return (
@@ -27,7 +29,8 @@ async function Page() {
       abouts = {abouts} 
       rooms = {rooms} 
       services = {services}
-      experiences = {experiences}/>
+      experiences = {experiences}
+      reviews= {reviews}/>
     </div>
   );
 }

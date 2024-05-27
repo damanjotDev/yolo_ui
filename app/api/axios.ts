@@ -147,6 +147,13 @@ export const fetchExperiences = (data: any) => axiosInstance.get('/v1/experience
 export const deleteExperience = (id: string) => axiosInstance.delete(`/v1/experience/delete/${id}`)
 
 
+//----------------------------------------------------------------------reviews
+export const createReview = (data: any) => axiosInstance.post('/v1/review/create', data);
+export const updateReview = (id: string,data: any) => axiosInstance.put(`/v1/review/update/${id}`, data);
+export const fetchReview = (id: string) => axiosInstance.get(`/v1/review/get/${id}`)
+export const fetchReviews = (data: any) => axiosInstance.get('/v1/review/getall', {data});
+export const deleteReview = (id: string) => axiosInstance.delete(`/v1/review/delete/${id}`)
+
 
 
 
