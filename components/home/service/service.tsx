@@ -75,7 +75,6 @@ const HomeServices = ({services}:{services: ServicesModal}) => {
     
                       {/* Introduction section */}
                       <div className='
-                      group-hover:hidden
                       absolute
                       bottom-[-20px]
                       left-0
@@ -85,8 +84,9 @@ const HomeServices = ({services}:{services: ServicesModal}) => {
                       bg-black
                       opacity-85
                       skew-y-[-6deg]
-                      group-hover:bg-white
-                      group-hover:opacity-100'>
+                      group-hover:opacity-0
+                      transition-transform
+                      duration-1000'>
                         <div className='
                         relative
                         skew-y-[6deg]
@@ -124,12 +124,11 @@ const HomeServices = ({services}:{services: ServicesModal}) => {
                       right-0
                       bottom-0
                       z-[15]
-                      opacity-80
                       group-hover:block
                       group-hover:bg-black
                      '
-                     initial={{height: '0%'}}
-                     whileInView={{height: '100%'}}
+                     initial={{opacity: 0}}
+                     whileInView={{opacity: 0.85}}
                      transition={{duration: 1, ease: 'linear'}}/>
     
                      {/* on hover div content */}

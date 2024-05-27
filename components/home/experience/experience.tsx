@@ -65,7 +65,8 @@ const HomeExperience = ({ experiences }: { experiences: ExperiencesModal }) => {
       w-full
       grid
       grid-cols-1
-      md:gap-10">
+      md:gap-10
+      gap-5">
         {experiences?.rows?.map((ele, index) => experiences?.count % 4 === 0 ?
           (
             <motion.div
@@ -82,9 +83,9 @@ const HomeExperience = ({ experiences }: { experiences: ExperiencesModal }) => {
                 tiltMaxAngleY={1}
                 transitionSpeed={250}
                 className="
-                        w-full
-                        h-full
-                        ">
+                w-full
+                h-full
+                ">
                 <motion.div 
                 className="
                 w-full
