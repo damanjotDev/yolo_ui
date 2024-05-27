@@ -207,7 +207,7 @@ const DesktopNavbar = ({scrolled, navbarRoutes}:{scrolled?:boolean, navbarRoutes
             duration-200
             bg-primary
             ">
-              <TypographyH5 className="font-[600]" title="Free Quote"/>
+              <TypographyH5 className="font-[600]" title="BOOK ONLINE"/>
               <GoArrowRight 
               size={20}
               className="

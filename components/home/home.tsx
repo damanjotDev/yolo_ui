@@ -1,12 +1,13 @@
 'use client'
 import HomeCareousell  from "./careousel/careousel";
 import dynamic from "next/dynamic";
-import { AboutsModal, RoomsModal} from "@/app/utils/modals";
+import { AboutsModal, RoomsModal, ServicesModal} from "@/app/utils/modals";
 import {HomeAbout} from "./about/about";
 import { HomeRoom } from "./room/room";
+import { HomeServices } from "./service/service";
 
 
-const Home = ({abouts, rooms}:{abouts: AboutsModal, rooms: RoomsModal}) => {
+const Home = ({abouts, rooms, services}:{abouts: AboutsModal, rooms: RoomsModal, services: ServicesModal}) => {
 
   return (
       <div className={`
@@ -18,6 +19,7 @@ const Home = ({abouts, rooms}:{abouts: AboutsModal, rooms: RoomsModal}) => {
             <HomeCareousell/>
             <HomeAbout  abouts={abouts}/>
             <HomeRoom rooms = {rooms}/>
+            <HomeServices services = {services}/>
       </div>
   )
 }

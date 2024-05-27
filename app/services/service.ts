@@ -94,3 +94,14 @@ export const removeService = createAsyncThunk<any, any>('ServiceSlice/removeServ
         return thunkApi.rejectWithValue(error.response?.status)
     }
 })
+
+export const getServicesWithServer = async () => {
+    try {
+        const {data} = await fetchServices({})
+        return data.data
+    } catch (err) {
+        const error: any = err;
+        console.log('err', error)
+        // throw new Error('Something went wrong')
+    }
+  }

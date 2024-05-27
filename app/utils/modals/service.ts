@@ -8,6 +8,12 @@ export interface ServiceModal {
     updatedAt: Date;
   }
 
+export interface ServicesModal {
+  count: number;
+  rows: ServiceModal[]
+}
+  
+
 interface ImageModal {
   name: string,
   imageUrl: string,
