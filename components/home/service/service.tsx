@@ -35,7 +35,7 @@ const HomeServices = ({services}:{services: ServicesModal}) => {
                 justify-center"
                 initial={{ x: 200 }}
                 whileInView={{ x: 0 }}
-                transition={{ duration: 1, ease: 'easeInOut' }}
+                transition={{ duration: 1, ease: 'linear' }}
                 viewport={{ once: true }}>
                     <TypographyH2 title="Services We Offer"/>
                 </motion.div>
@@ -46,7 +46,7 @@ const HomeServices = ({services}:{services: ServicesModal}) => {
                 font-roboto-condensed "
                 initial={{ x: 200 }}
                 whileInView={{ x: 0 }}
-                transition={{ duration: 1, ease: 'easeInOut' }}
+                transition={{ duration: 1, ease: 'linear' }}
                 viewport={{ once: true }}>
                     <TypographyH4 className="font-bold" title="Check out our awesome services"/>
                 </motion.div>
@@ -82,7 +82,7 @@ const HomeServices = ({services}:{services: ServicesModal}) => {
                       right-0
                       w-full
                       h-[130px]
-                      bg-accent
+                      bg-black
                       opacity-85
                       skew-y-[-6deg]
                       group-hover:bg-white
@@ -109,7 +109,7 @@ const HomeServices = ({services}:{services: ServicesModal}) => {
                           justify-center
                           ">
                             <div className='h-[75px] w-[75px] rounded-full border-primary border-[3px] p-1'>
-                              <img src={ele?.icons?.[0]?.imageUrl} alt={'no service image'} className='h-full w-full object-cover rounded-full'/>
+                              <img src={ele?.images?.[0]?.imageUrl} alt={'no service image'} className='h-full w-full rounded-full'/>
                             </div>
                           </div>
                         </div>
@@ -124,13 +124,13 @@ const HomeServices = ({services}:{services: ServicesModal}) => {
                       right-0
                       bottom-0
                       z-[15]
-                      opacity-95
+                      opacity-80
                       group-hover:block
-                      group-hover:bg-accent
+                      group-hover:bg-black
                      '
                      initial={{height: '0%'}}
                      whileInView={{height: '100%'}}
-                     transition={{duration: 1, ease: 'easeInOut'}}/>
+                     transition={{duration: 1, ease: 'linear'}}/>
     
                      {/* on hover div content */}
                         <motion.div className='
