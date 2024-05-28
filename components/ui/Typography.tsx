@@ -41,7 +41,7 @@ export function TypographyH4({title="hello", className=""}: TypographyProps) {
 
 export function TypographyH5({title="hello", className=""}: TypographyProps) {
     return (
-        <h4 className={cn("scroll-m-20 text-sm font-semibold tracking-tight", className)}>
+        <h4 className={cn("scroll-m-20 text-sm font-semibold tracking-wider", className)}>
             {title}
         </h4>
     )

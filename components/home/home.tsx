@@ -7,6 +7,7 @@ import { HomeRoom } from "./room/room";
 import { HomeServices } from "./service/service";
 import { HomeExperience } from "./experience/experience";
 import { HomeReviews } from "./review/reviews";
+import { HomeBlog } from "./blog/blog";
 
 
 const Home = (
@@ -38,6 +39,7 @@ const Home = (
             <HomeServices services = {services}/>
             <HomeExperience experiences={experiences}/>
             <HomeReviews reviews={reviews}/>
+            <HomeBlog/>
       </div>
   )
 }
