@@ -187,7 +187,7 @@ const HomeRoom = ({rooms}:{rooms: RoomsModal}) => {
                 border-2
                 border-primary
                 hover:bg-primary"
-                onClick={() => navigate.push(RoutesName.Abouts)}>
+                onClick={() => navigate.push(RoutesName.Rooms)}>
                     <TypographyP
                     className="
                     font-[600] 
