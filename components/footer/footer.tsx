@@ -5,6 +5,7 @@ import { motion } from "@/app/utils/animation";
 import { FaChevronRight, FiSend, IoLocation, BsTelephoneFill, MdOutlineMarkEmailRead, BsLifePreserver } from "@/app/utils";
 import { ReviewsModal, AboutsModal } from "@/app/utils/modals";
 import { TypographyH1, TypographyH3, TypographyH4, TypographyH5, TypographyP } from "@/components/ui/Typography";
+import { SocialLinks } from "./socialLink";
 
 
 
@@ -268,6 +269,11 @@ const Footer = ({abouts}:{abouts: AboutsModal}) => {
                  </div>
 
                </div>
+
+                {about?.socialLinks?
+                 <SocialLinks items={about?.socialLinks}/>:
+                null}
+                
           </div>
 
         </div>
