@@ -15,7 +15,7 @@ export const ScrollToTop = () => {
             items-center
             justify-center
             p-2
-            gradient3'
+            bg-primary'
             onClick={handleScrollToTop}
             onTap={handleScrollToTop}
             initial={{x: 40}}
