@@ -2,11 +2,9 @@
 import { usePathname, useRouter} from "next/navigation";
 import { motion } from "@/app/utils/animation";
 
-import { TypographyH1, TypographyH2, TypographyH3, TypographyH4, TypographyH5, TypographyP } from "../ui/Typography";
 import { FaChevronRight, FiSend, IoLocation, BsTelephoneFill, MdOutlineMarkEmailRead, BsLifePreserver } from "@/app/utils";
-import Image from "next/image";
-import { cn } from "@/lib/utils";
 import { ReviewsModal, AboutsModal } from "@/app/utils/modals";
+import { TypographyH1, TypographyH3, TypographyH4, TypographyH5, TypographyP } from "@/components/ui/Typography";
 
 
 
@@ -113,7 +111,7 @@ const Footer = ({abouts}:{abouts: AboutsModal}) => {
           transition-transform
           duration-400
           hover:text-primary">
-            <TypographyH4 
+            <TypographyH4
             className="font-semibold" 
             title={"USEFUL LINKS"} />
           </div>
@@ -299,7 +297,9 @@ const Footer = ({abouts}:{abouts: AboutsModal}) => {
           gap-5
           items-start">
            {about?.awards?.map((ele, index)=>(
-            <div className="h-[100px]">
+            <div 
+            key={index+1}
+            className="h-[100px]">
               <img src={ele?.imageUrl} className="h-full w-full object-contain"/>
             </div>
            ))}
