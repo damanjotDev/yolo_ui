@@ -2,7 +2,7 @@
 import { cn } from "../../lib/utils"
 
 interface TypographyProps {
-    title: string;
+    title: string | number;
     className?: string
 }
 

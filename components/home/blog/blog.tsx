@@ -70,7 +70,9 @@ const HomeBlog = () => {
       md:gap-10
       gap-5">
         {Array.from({length: 3})?.map((ele,index)=>(
-          <motion.div className="
+          <motion.div 
+          key={index+1}
+          className="
           flex
           flex-col
           items-start

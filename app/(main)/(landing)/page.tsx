@@ -3,6 +3,7 @@ import { Home } from "@/components/home/home";
 import { getAboutsWithServer, getExperiencesWithServer, getPropertiesWithServer, getRoomsWithServer, getServicesWithServer } from "@/app/services";
 import { Navbar } from "@/components/navbars/navbar";
 import { getReviewsWithServer } from "@/app/services/review";
+import { Footer } from "@/components/footer/footer";
 
 
 async function Page() {
@@ -31,6 +32,7 @@ async function Page() {
       services = {services}
       experiences = {experiences}
       reviews= {reviews}/>
+      <Footer abouts = {abouts} />
     </div>
   );
 }
