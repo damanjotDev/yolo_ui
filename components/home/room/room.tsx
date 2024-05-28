@@ -67,7 +67,7 @@ const HomeRoom = ({rooms}:{rooms: RoomsModal}) => {
                 justify-center"
                 initial={{ x: 200 }}
                 whileInView={{ x: 0 }}
-                transition={{ duration: 1, ease: 'easeInOut' }}
+                transition={{ duration: 0.8, ease: 'easeInOut' }}
                 viewport={{ once: true }}>
                     <TypographyH2 className="" title="OUR TOP PICKS"/>
                 </motion.div>
@@ -78,7 +78,7 @@ const HomeRoom = ({rooms}:{rooms: RoomsModal}) => {
                 font-roboto-condensed "
                 initial={{ x: 200 }}
                 whileInView={{ x: 0 }}
-                transition={{ duration: 1, ease: 'easeInOut' }}
+                transition={{ duration: 0.8, ease: 'easeInOut' }}
                 viewport={{ once: true }}>
                     <TypographyH4 className="font-bold" title="Check out our best selling rooms!"/>
                 </motion.div>
@@ -102,7 +102,7 @@ const HomeRoom = ({rooms}:{rooms: RoomsModal}) => {
                     (index+1)%2===1 && "row-span-2 h-full")}
                     initial={(index+1)%2===1?{ y: -200, opacity: 0 }:{ x: 200, opacity: 0}}
                     whileInView={(index+1)%2===1?{ y: 0, opacity: 100 }:{ x: 0, opacity: 100}}
-                    transition={{ duration: 1, ease: 'easeInOut' }}
+                    transition={{ duration: 0.8, ease: 'easeInOut' }}
                     viewport={{ once: true }}
                     >
                         <Tilt 
@@ -169,7 +169,7 @@ const HomeRoom = ({rooms}:{rooms: RoomsModal}) => {
                 text-foreground"
                 initial={{ x: 200, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 1, ease: 'easeInOut'}}
+                transition={{ duration: 0.8, ease: 'easeInOut'}}
                 viewport={{ once: true }}>
                 <button className="
                 flex

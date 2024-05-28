@@ -41,7 +41,7 @@ const HomeExperience = ({ experiences }: { experiences: ExperiencesModal }) => {
         justify-center"
         initial={{ x: 200 }}
         whileInView={{ x: 0 }}
-        transition={{ duration: 1, ease: 'easeInOut' }}
+        transition={{ duration: 0.8, ease: 'easeInOut' }}
         viewport={{ once: true }}>
           <TypographyH2 title="DISCOVER HIMACHAL" />
         </motion.div>
@@ -53,7 +53,7 @@ const HomeExperience = ({ experiences }: { experiences: ExperiencesModal }) => {
         font-roboto-condensed "
         initial={{ x: 200 }}
         whileInView={{ x: 0 }}
-        transition={{ duration: 1, ease: 'easeInOut' }}
+        transition={{ duration: 0.8, ease: 'easeInOut' }}
         viewport={{ once: true }}>
           <TypographyH4 className="font-bold" title="Places you must explore this summer" />
         </motion.div>
@@ -75,7 +75,7 @@ const HomeExperience = ({ experiences }: { experiences: ExperiencesModal }) => {
                 cn("flex items-center justify-center h-[400px] md:h-[750px]")}
               initial={(index + 1) % 2 === 1 ? { y: -200, opacity: 0 } : { x: 200, opacity: 0 }}
               whileInView={(index + 1) % 2 === 1 ? { y: 0, opacity: 100 } : { x: 0, opacity: 100 }}
-              transition={{ duration: 1, ease: 'easeInOut' }}
+              transition={{ duration: 0.8, ease: 'easeInOut' }}
               viewport={{ once: true }}
             >
               <Tilt
@@ -133,7 +133,7 @@ const HomeExperience = ({ experiences }: { experiences: ExperiencesModal }) => {
                     justify-center"
                     initial={{ y: 100}}
                     whileInView={{ y: 0}}
-                    transition={{ duration: 1, ease: 'linear' }}
+                    transition={{ duration: 0.8, ease: 'linear' }}
                     viewport={{once: true}}>
                       <TypographyH2
                         className="font-[200] text-center"
@@ -149,7 +149,7 @@ const HomeExperience = ({ experiences }: { experiences: ExperiencesModal }) => {
                     text-foreground"
                     initial={{ y: 100}}
                     whileInView={{ y: 0}}
-                    transition={{ duration: 1, ease: 'linear' }}
+                    transition={{ duration: 0.8, ease: 'linear' }}
                     viewport={{once: true}}>
                       <button 
                       className="

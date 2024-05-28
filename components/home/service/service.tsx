@@ -35,7 +35,7 @@ const HomeServices = ({services}:{services: ServicesModal}) => {
                 justify-center"
                 initial={{ x: 200 }}
                 whileInView={{ x: 0 }}
-                transition={{ duration: 1, ease: 'linear' }}
+                transition={{ duration: 0.8, ease: 'linear' }}
                 viewport={{ once: true }}>
                     <TypographyH2 title="Services We Offer"/>
                 </motion.div>
@@ -46,7 +46,7 @@ const HomeServices = ({services}:{services: ServicesModal}) => {
                 font-roboto-condensed "
                 initial={{ x: 200 }}
                 whileInView={{ x: 0 }}
-                transition={{ duration: 1, ease: 'linear' }}
+                transition={{ duration: 0.8, ease: 'linear' }}
                 viewport={{ once: true }}>
                     <TypographyH4 className="font-bold" title="Check out our awesome services"/>
                 </motion.div>
@@ -65,9 +65,9 @@ const HomeServices = ({services}:{services: ServicesModal}) => {
                   <motion.div  
                   key={ele.id}
                   className='flex relative group w-full shadow-lg'
-                  initial={{scale:0.5, opacity: 0}}
+                  initial={{scale:0.8, opacity: 0}}
                   whileInView={{scale:1, opacity: 1}}
-                  transition={{duration:1, ease: 'linear'}}
+                  transition={{duration:0.8, ease: 'linear'}}
                   viewport={{once: true}}>
                     <div className='h-[370px] relative overflow-hidden hover:border-primary hover:border w-full'>
                       {/* Image Section */}
@@ -128,8 +128,8 @@ const HomeServices = ({services}:{services: ServicesModal}) => {
                       group-hover:bg-black
                      '
                      initial={{opacity: 0}}
-                     whileInView={{opacity: 0.85}}
-                     transition={{duration: 1, ease: 'linear'}}/>
+                     whileInView={{opacity: 0.75}}
+                     transition={{duration: 0.8, ease: 'linear'}}/>
     
                      {/* on hover div content */}
                         <motion.div className='
@@ -149,7 +149,7 @@ const HomeServices = ({services}:{services: ServicesModal}) => {
                         gap-5'
                         initial={{y: 40}}
                         whileInView={{y:0}}
-                        transition={{duration: 1, ease: 'easeInOut'}}>
+                        transition={{duration: 0.8, ease: 'easeInOut'}}>
     
                            <div className='flex text-center -mb-3'>
                             <TypographyH4 title={ele.title} className='text-white ' />

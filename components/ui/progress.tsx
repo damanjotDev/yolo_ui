@@ -32,7 +32,7 @@ const Progress = React.forwardRef<
       style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
       initial={{x: '-100%'}}
       whileInView={{x: `calc(-${100 - (value || 0)}%)`}}
-      transition={{duration: 1}}
+      transition={{duration: 0.8}}
       viewport={{once: true}}
     />
   </ProgressPrimitive.Root>

@@ -49,7 +49,7 @@ const HomeAbout = ({ abouts }: { abouts: AboutsModal }) => {
                     text-black"
                         initial={{ x: 200 }}
                         whileInView={{ x: 0 }}
-                        transition={{ duration: 1, ease: 'easeInOut' }}
+                        transition={{ duration: 0.8, ease: 'easeInOut' }}
                         viewport={{ once: true }}>
                         <TypographyH2 title={about?.title || "loading"} />
                     </motion.div>
@@ -62,7 +62,7 @@ const HomeAbout = ({ abouts }: { abouts: AboutsModal }) => {
                     text-foreground"
                         initial={{ x: 200, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1 }}
-                        transition={{ duration: 1, ease: 'easeInOut'}}
+                        transition={{ duration: 0.8, ease: 'easeInOut'}}
                         viewport={{ once: true }}>
                         <div
                         className="
@@ -80,7 +80,7 @@ const HomeAbout = ({ abouts }: { abouts: AboutsModal }) => {
                         text-foreground"
                         initial={{ x: 200, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1 }}
-                        transition={{ duration: 1, ease: 'easeInOut'}}
+                        transition={{ duration: 0.8, ease: 'easeInOut'}}
                         viewport={{ once: true }}>
                         <button className="
                         flex

@@ -46,7 +46,7 @@ const HomeReviews = ({ reviews }: { reviews: ReviewsModal }) => {
             justify-center"
             initial={{ x: -200 }}
             whileInView={{ x: 0 }}
-            transition={{ duration: 1, ease: 'linear' }}
+            transition={{ duration: 0.8, ease: 'linear' }}
             viewport={{ once: true }}>
               <TypographyH2 title="OUR GUESTS LOVE US" />
             </motion.div>
@@ -57,7 +57,7 @@ const HomeReviews = ({ reviews }: { reviews: ReviewsModal }) => {
             font-roboto-condensed "
             initial={{ y: -100 }}
             whileInView={{ y: 0 }}
-            transition={{ duration: 1, ease: 'linear' }}
+            transition={{ duration: 0.8, ease: 'linear' }}
             viewport={{ once: true }}>
               <TypographyH4 className="font-bold" title="What our guests are saying about us" />
             </motion.div>
@@ -72,7 +72,7 @@ const HomeReviews = ({ reviews }: { reviews: ReviewsModal }) => {
           text-foreground"
           initial={{ x: 200, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1, ease: 'easeInOut'}}
+          transition={{ duration: 0.8, ease: 'easeInOut'}}
           viewport={{ once: true }}>
                 <button className="
                 w-auto
