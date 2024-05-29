@@ -20,7 +20,7 @@ interface ImageDataProps {
 
 const Careousell = (
     {imageData, careousellHeight, imageMode}:
-    {imageData: ImageDataProps[], careousellHeight?: string, imageMode?: 'cover' | 'conatin' | 'fill'}
+    {imageData: ImageDataProps[], careousellHeight?: string, imageMode?: 'cover' | 'contain' | 'fill'}
 ) => {
 
     const pathname = usePathname();

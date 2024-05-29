@@ -5,9 +5,10 @@ export const EventType = {
 }
 
 export const AvailableEventTypes = [
-    {title: 'EVENT', value: 'EVENT'},
-    {title: 'FOOD', value: 'FOOD'},
-    {title: 'ROOM', value: 'ROOM'}
+    {title: 'ALL', value: 'ALL'},
+    {title: 'EVENTS', value: 'EVENT'},
+    {title: 'FOOD AND BEVERAGE', value: 'FOOD'},
+    {title: 'ROOMS', value: 'ROOM'}
 ]
 
 export interface EventModal {
