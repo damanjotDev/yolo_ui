@@ -3,9 +3,12 @@ import { RoomsModal } from "@/app/utils/modals";
 import PageInfromation from "../common/pageInfromation";
 import roomBackground from "@/app/assets/images/roomBackground.webp"
 import { TypographyH2, TypographyH3, TypographyH4, TypographyH5, TypographyP } from "../ui/Typography";
-import { motion } from "@/app/utils"
+import { RoutesName, motion } from "@/app/utils"
+import { useRouter } from "next/navigation";
 
 const Rooms = ({rooms}:{rooms: RoomsModal}) => {
+
+  const navigate = useRouter();
 
   return (
       <div className={`
@@ -155,7 +158,9 @@ const Rooms = ({rooms}:{rooms: RoomsModal}) => {
                     items-center
                     justify-center
                     p-4">
-                      <div className="
+                      <div 
+                      onClick={()=> navigate.push(RoutesName.Rooms+"/"+ele.id)}
+                      className="
                       flex 
                       items-center 
                       justify-center

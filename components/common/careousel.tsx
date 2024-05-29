@@ -4,42 +4,25 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { usePathname } from "next/navigation";
 import { motion } from "@/app/utils/animation";
-
-import image1 from "@/app/assets/images/home1.jpg"
-import image2 from "@/app/assets/images/home2.jpeg"
-import image3 from "@/app/assets/images/home3.jpg"
 import Image from "next/image";
-import { TypographyH1, TypographyH4, TypographyH5, TypographyP } from "../../ui/Typography";
+import { TypographyH1, TypographyH4, TypographyH5, TypographyP } from "../ui/Typography";
 
-const imageData = [
-    {
-        id: 1,
-        title: 'Discover',
-        description: 'Oasis Hotel Prasonisi',
-        imageUrl: image1
-    },
-    {
-        id: 2,
-        title: 'Escape to Prasonisi',
-        description: 'Book your escape today',
-        imageUrl: image2
-    },
-    {
-        id: 3,
-        title: 'Beachfront Hotel',
-        description: 'Best price Guarantee!',
-        imageUrl: image3
-    }
-]
+
+interface ImageDataProps {
+    id: number;
+    title?: string;
+    description?: string;
+    imageUrl: any;
+  }
 
 
 
- const HomeCareousell = () => {
+const Careousell = ({imageData}:{imageData: ImageDataProps[]}) => {
 
     const pathname = usePathname();
 
     const settings = {
-        infinite: true,
+        infinite: imageData?.length>1,
         speed: 2000,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -54,11 +37,12 @@ const imageData = [
             <Slider {...settings}>
                 {imageData.map((item) => (
                     <div className="relative w-full h-[calc(100vh)]"
-                    key={item.id}>
+                        key={item.id}>
                         <Image
-                            src={item.imageUrl}
-                            className=" h-full object-cover w-full"
-                            alt=""
+                        fill
+                        src={item.imageUrl}
+                        className=" h-full object-cover w-full"
+                        alt=""
                         />
                         <div className="
                         absolute 
@@ -77,23 +61,23 @@ const imageData = [
                             flex 
                             items-center 
                             justify-center"
-                            initial={{y: 40, opacity: 0}}
-                            whileInView={{y:0, opacity: 1}}
-                            transition={{duration: 0.4, ease:'linear'}}>
+                                initial={{ y: 40, opacity: 0 }}
+                                whileInView={{ y: 0, opacity: 1 }}
+                                transition={{ duration: 0.4, ease: 'linear' }}>
                                 <TypographyH1
                                     className="font-[200] text-center"
-                                    title={item.title} />
+                                    title={item?.title || ""} />
                             </motion.div>
 
                             <motion.div className="
                             flex 
                             items-center 
                             justify-center"
-                            initial={{y: 40, opacity: 0}}
-                            whileInView={{y:0, opacity: 1}}
-                            transition={{duration: 0.4, ease:'linear', delay: 0.1}}>
+                                initial={{ y: 40, opacity: 0 }}
+                                whileInView={{ y: 0, opacity: 1 }}
+                                transition={{ duration: 0.4, ease: 'linear', delay: 0.1 }}>
                                 <TypographyH4
-                                    title={item.description} className="text-center"/>
+                                    title={item?.description || ""} className="text-center" />
                             </motion.div>
                         </div>
                     </div>
@@ -104,4 +88,4 @@ const imageData = [
     )
 }
 
-export default HomeCareousell
+export default Careousell

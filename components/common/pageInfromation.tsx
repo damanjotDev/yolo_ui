@@ -9,7 +9,7 @@ import Image from "next/image";
 import { TypographyH1, TypographyH4, TypographyH5, TypographyP } from "../ui/Typography";
 
 
- const PageInfromation = ({title,description,imageUrl}:{title: string, description: string, imageUrl: any}) => {
+ const PageInfromation = ({title,description,imageUrl}:{title?: string, description?: string, imageUrl: any}) => {
 
 
     return (
@@ -21,9 +21,10 @@ import { TypographyH1, TypographyH4, TypographyH5, TypographyP } from "../ui/Typ
             transition={{duration: 0.8, ease: 'linear'}}
             viewport={{once: true}}>
                 <Image
-                    src={imageUrl}
-                    className=" h-full object-cover w-full"
-                    alt=""
+                fill
+                src={imageUrl}
+                className=" h-full object-cover w-full"
+                alt=""
                 />
                 <div className="
                 absolute 
@@ -39,6 +40,7 @@ import { TypographyH1, TypographyH4, TypographyH5, TypographyP } from "../ui/Typ
                 gap-2
                 text-background">
                     <motion.div className="
+                    w-full
                     flex 
                     items-center 
                     justify-center"
@@ -47,7 +49,7 @@ import { TypographyH1, TypographyH4, TypographyH5, TypographyP } from "../ui/Typ
                     transition={{duration: 0.4, delay: 0.8, ease:'linear'}}>
                         <TypographyH1
                             className="font-[200] text-center"
-                            title={title} />
+                            title={title || ""} />
                     </motion.div>
 
                     <motion.div className="
@@ -58,7 +60,7 @@ import { TypographyH1, TypographyH4, TypographyH5, TypographyP } from "../ui/Typ
                     whileInView={{y:0, opacity: 1}}
                     transition={{duration: 0.4, ease:'linear', delay: 0.9}}>
                         <TypographyH4
-                            title={description} className="text-center"/>
+                            title={description || ""} className="text-center"/>
                     </motion.div>
                 </div>
             </motion.div>

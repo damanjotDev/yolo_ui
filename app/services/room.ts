@@ -103,3 +103,13 @@ export const getRoomsWithServer = async () => {
         console.log('err', error)
     }
   }
+
+export const getRoomWithServer = async (roomId: number) => {
+    try {
+        const {data} = await fetchRoom(roomId)
+        return data.data
+    } catch (err) {
+        const error: any = err;
+        console.log('err', error)
+    }
+  }

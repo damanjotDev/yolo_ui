@@ -128,7 +128,7 @@ export const deleteTag = (id: string) => axiosInstance.delete(`/v1/tag/delete/${
 //----------------------------------------------------------------------room
 export const createRoom = (data: any) => axiosInstance.post('/v1/room/create', data);
 export const updateRoom = (id: string,data: any) => axiosInstance.put(`/v1/room/update/${id}`, data);
-export const fetchRoom = (id: string) => axiosInstance.get(`/v1/room/event/${id}`)
+export const fetchRoom = (id: string | number) => axiosInstance.get(`/v1/room/get/${id}`)
 export const fetchRooms = (data: any) => axiosInstance.get('/v1/room/getall', {data});
 export const deleteRoom = (id: string) => axiosInstance.delete(`/v1/room/delete/${id}`)
 
