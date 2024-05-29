@@ -29,7 +29,7 @@ const Navbar = ({properties}:{properties: PropertiesModal}) => {
               icon: MdOutlineAnalytics,
               active: RoutesName.Locations===pathname,
               label: 'Locations',
-              dropdownItems: properties?.rows?.map((item)=>({id: item?.id, title: item?.title,  navigate: () => navigate.push(RoutesName.Locations+item.id)}))
+              dropdownItems: properties?.rows?.map((item)=>({id: item?.id, title: item?.title,  navigate: () => navigate.push(RoutesName.Locations+"/"+item.id)}))
           },
           {
               id: '3',

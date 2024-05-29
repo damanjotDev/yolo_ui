@@ -106,3 +106,14 @@ export const getPropertiesWithServer = async () => {
         // throw new Error('Something went wrong')
     }
   }
+
+export const getPropertieWithServer = async (branchId: any) => {
+    try {
+        const {data} = await fetchProperty(branchId)
+        return data.data
+    } catch (err) {
+        const error: any = err;
+        console.log('err', error)
+        // throw new Error('Something went wrong')
+    }
+  }

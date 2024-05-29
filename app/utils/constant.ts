@@ -3,7 +3,7 @@ export const RoutesName = {
         
         Home: '/',
 
-        Locations: '/locations',
+        Locations: '/branchs',
         Experiences: '/experiences',
         Gallery: '/life-yolo',
         Adventure: '/blog',
