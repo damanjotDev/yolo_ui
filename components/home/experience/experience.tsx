@@ -166,7 +166,7 @@ const HomeExperience = ({ experiences }: { experiences: ExperiencesModal }) => {
                       transition-all
                       duration-200
                       bg-primary"
-                        onClick={() => navigate.push(RoutesName.Abouts)}>
+                        onClick={() => navigate.push(RoutesName.Experiences)}>
                         <TypographyP
                           className="
                           font-[600]" 

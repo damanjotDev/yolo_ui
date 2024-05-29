@@ -35,7 +35,7 @@ const Careousell = ({imageData}:{imageData: ImageDataProps[]}) => {
           w-full
           h-full`}>
             <Slider {...settings}>
-                {imageData.map((item) => (
+                {imageData?.map((item) => (
                     <div className="relative w-full h-[calc(100vh)]"
                         key={item.id}>
                         <Image

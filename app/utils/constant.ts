@@ -1,7 +1,7 @@
 export const RoutesName = {
         Login: '/',
         
-        Home: '/home',
+        Home: '/',
 
         Locations: '/locations',
         Experiences: '/experiences',

@@ -106,3 +106,14 @@ export const getExperiencesWithServer = async () => {
         // throw new Error('Something went wrong')
     }
   }
+
+  export const getExperienceWithServer = async (experienceId: any) => {
+    try {
+        const {data} = await fetchExperience(experienceId)
+        return data.data
+    } catch (err) {
+        const error: any = err;
+        console.log('err', error)
+        // throw new Error('Something went wrong')
+    }
+  }

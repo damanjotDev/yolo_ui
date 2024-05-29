@@ -16,6 +16,7 @@ import {
   AccordionTrigger,
 } from "../../components/ui/accordion"
 import { FiMenu } from "@/app/utils/icons";
+import { cn } from "@/lib/utils";
 
 interface NavbarRoutesProps {
   id: string;
@@ -56,7 +57,7 @@ const MobileNavbar = ({navbarRoutes}:{navbarRoutes: NavbarRoutesProps[]}) => {
                   {/* Mobile Navigation section */}
                   <Accordion type="single" collapsible className="w-full gap-2">
                     {navbarRoutes?.map((item)=>(
-                      <AccordionItem key={item.id} value={item.id}>
+                      <AccordionItem className={cn(item.active &&  "text-primary")} key={item.id} value={item.id} onClick={item.navigate}>
                       <AccordionTrigger className="py-3" >
                         <TypographyH4 title={item.label}/>
                       </AccordionTrigger>

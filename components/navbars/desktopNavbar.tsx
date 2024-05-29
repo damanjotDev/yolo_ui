@@ -116,7 +116,9 @@ const DesktopNavbar = ({scrolled, navbarRoutes}:{scrolled?:boolean, navbarRoutes
                   whileHover="hover" 
                   animate="rest">
                     
-                    <div className= {cn(" flex items-center gap-2 transition-all  duration-500  text-background group-hover:text-primary",scrolled&&"text-foreground")} >
+                    <div className= {cn(" flex items-center gap-2 transition-all  duration-500  text-background group-hover:text-primary",
+                    scrolled&&"text-foreground", item.active &&  "text-primary")} 
+                    onClick={item.navigate}>
                       <TypographyP title={item.label}/>
                       <FaChevronDown 
                       size={15} 
