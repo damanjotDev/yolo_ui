@@ -5,7 +5,7 @@ export const RoutesName = {
 
         Locations: '/locations',
         Experiences: '/experiences',
-        Gallery: '/gallery',
+        Gallery: '/life-yolo',
         Adventure: '/blog',
         Franchise: '/franchise',
         Contact: '/contact',

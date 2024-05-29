@@ -19,6 +19,11 @@ export interface EventModal {
     updatedAt: Date;
   }
 
+export interface EventsModal {
+  count: number;
+  rows: EventModal[]
+}
+
 interface ImageModal {
   isCover: boolean;
   name: string,

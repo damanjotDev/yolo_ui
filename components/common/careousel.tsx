@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { motion } from "@/app/utils/animation";
 import Image from "next/image";
 import { TypographyH1, TypographyH4, TypographyH5, TypographyP } from "../ui/Typography";
+import { cn } from "@/lib/utils";
 
 
 interface ImageDataProps {
@@ -17,7 +18,10 @@ interface ImageDataProps {
 
 
 
-const Careousell = ({imageData}:{imageData: ImageDataProps[]}) => {
+const Careousell = (
+    {imageData, careousellHeight, imageMode}:
+    {imageData: ImageDataProps[], careousellHeight?: string, imageMode?: 'cover' | 'conatin' | 'fill'}
+) => {
 
     const pathname = usePathname();
 
@@ -36,12 +40,12 @@ const Careousell = ({imageData}:{imageData: ImageDataProps[]}) => {
           h-full`}>
             <Slider {...settings}>
                 {imageData?.map((item) => (
-                    <div className="relative w-full h-[calc(100vh)]"
+                    <div className={cn("relative w-full h-[calc(100vh)]", careousellHeight?careousellHeight: null)}
                         key={item.id}>
                         <Image
                         fill
                         src={item.imageUrl}
-                        className=" h-full object-cover w-full"
+                        className={cn("h-full object-cover w-full", imageMode?`object-${imageMode}`: null)}
                         alt=""
                         />
                         <div className="

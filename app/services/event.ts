@@ -94,3 +94,25 @@ export const removeEvent = createAsyncThunk<any, any>('EventSlice/removeEvent', 
         return thunkApi.rejectWithValue(error.response?.status)
     }
 })
+
+export const getEventsWithServer = async () => {
+    try {
+        const {data} = await fetchEvents({})
+        return data.data
+    } catch (err) {
+        const error: any = err;
+        console.log('err', error)
+        // throw new Error('Something went wrong')
+    }
+  }
+
+  export const getEventWithServer = async (eventId: any) => {
+    try {
+        const {data} = await fetchEvent(eventId)
+        return data.data
+    } catch (err) {
+        const error: any = err;
+        console.log('err', error)
+        // throw new Error('Something went wrong')
+    }
+  }

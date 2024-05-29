@@ -113,7 +113,7 @@ export const deleteCategory = (id: string) => axiosInstance.delete(`/v1/category
 //----------------------------------------------------------------------event
 export const createEvent = (data: any) => axiosInstance.post('/v1/event/create', data);
 export const updateEvent = (id: string,data: any) => axiosInstance.put(`/v1/event/update/${id}`, data);
-export const fetchEvent = (id: string) => axiosInstance.get(`/v1/category/event/${id}`)
+export const fetchEvent = (id: string) => axiosInstance.get(`/v1/event/get/${id}`)
 export const fetchEvents = (data: any) => axiosInstance.get('/v1/event/getall', {data});
 export const deleteEvent = (id: string) => axiosInstance.delete(`/v1/event/delete/${id}`)
 
