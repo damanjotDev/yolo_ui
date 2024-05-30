@@ -156,7 +156,8 @@ export const deleteReview = (id: string) => axiosInstance.delete(`/v1/review/del
 
 
 
-
+//---------------------------------------------------------------------------sentMail
+export const sentMail = (data: any) => axiosInstance.post('/v1/sent-mail/normal', data);
 
 
 

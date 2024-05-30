@@ -10,6 +10,7 @@ import { Textarea } from "../ui/textarea";
 import { Loader2 } from "lucide-react";
 import { Button } from "../ui/button";
 import Map from "../common/map";
+import { sentNormalMail } from "@/app/services";
 
 const sendMessageFormValidation = yup.object().shape({
     email: yup.string().email('Invalid email').required('Email is required'),
@@ -58,6 +59,7 @@ const ContactUs = ({ abouts }: { abouts: AboutsModal }) => {
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     setLoading(true)
+    await sentNormalMail(data)
     setLoading(false)
     reset()
   }
@@ -130,8 +132,8 @@ const ContactUs = ({ abouts }: { abouts: AboutsModal }) => {
                     <Textarea disabled={loading} id="message" placeholder="Type message*" className='h-[140px]' {...register('message')} error={errors?.message?.message}/>
                   </div>
 
-                  <Button type='submit' className='w-[180px] h-[auto] text-sm text-white py-3'>
-                    {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                  <Button type='submit' className='w-[200px] h-[auto] text-sm text-white py-3'>
+                    {loading && <Loader2 className="text-white mr-2 h-4 w-4 animate-spin" />}
                     SEND YOUR MESSAGE NOW
                   </Button>
                 </form>

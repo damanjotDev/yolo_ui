@@ -6,6 +6,7 @@ import { ScrollToTop } from '@/components/scrollToTop/scrollToTop';
 import { getAboutsWithServer, getPropertiesWithServer } from '../services';
 import { Navbar } from '@/components/navbars/navbar';
 import { Footer } from '@/components/footer/footer';
+import { Toaster } from '@/components/ui/toaster';
 
 const inter = Oswald({
   subsets: ['latin'],
@@ -34,6 +35,7 @@ export default async function RootLayout({
           <Navbar properties = {properties}/>
           {children}
           <Footer abouts = {abouts} />
+           <Toaster />
         </StoreProviders>
       </body>
     </html>
