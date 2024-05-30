@@ -5,8 +5,9 @@ import { motion } from "@/app/utils/animation";
 const FallbackLoading = () => {
     return (
         <div className='
-        w-full 
-        h-screen
+        fixed
+        inset-x-0
+        inset-y-0
         flex
         items-center
         justify-center
