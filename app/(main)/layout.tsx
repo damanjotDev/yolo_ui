@@ -3,6 +3,9 @@ import { Oswald } from 'next/font/google'
 import '../globals.css'
 import StoreProviders from '../store/storeProvider'
 import { ScrollToTop } from '@/components/scrollToTop/scrollToTop';
+import { getAboutsWithServer, getPropertiesWithServer } from '../services';
+import { Navbar } from '@/components/navbars/navbar';
+import { Footer } from '@/components/footer/footer';
 
 const inter = Oswald({
   subsets: ['latin'],
@@ -14,17 +17,23 @@ export const metadata: Metadata = {
   description: 'YOLO Backpackers Home page',
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const [abouts, properties] = await Promise.all([
+    getAboutsWithServer(), 
+    getPropertiesWithServer()
+  ]);
   return (
     <html lang="en">
       <body className={`${inter.className} p-0 m-0`}>
         <StoreProviders>
           <ScrollToTop/>
+          <Navbar properties = {properties}/>
           {children}
+          <Footer abouts = {abouts} />
         </StoreProviders>
       </body>
     </html>

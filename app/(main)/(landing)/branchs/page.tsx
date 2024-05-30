@@ -1,13 +1,10 @@
 
-import { getAboutsWithServer, getPropertiesWithServer} from "@/app/services";
-import { Navbar } from "@/components/navbars/navbar";
-import { Footer } from "@/components/footer/footer";
+import {getPropertiesWithServer} from "@/app/services";
 import { Properties } from "@/components/properties/properties";
 
 
 async function Page() {
-  const [abouts, properties] = await Promise.all([
-      getAboutsWithServer(), 
+  const [properties] = await Promise.all([
       getPropertiesWithServer()
     ]);
 
@@ -20,9 +17,7 @@ async function Page() {
       flex-col
       text-[70px]"
     >
-      <Navbar properties = {properties}/>
       <Properties properties={properties}/>
-      <Footer abouts = {abouts} />
     </div>
   );
 }

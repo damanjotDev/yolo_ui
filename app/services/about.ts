@@ -7,7 +7,7 @@ import { AboutsModal } from "../utils/modals";
 export const addAbout = createAsyncThunk<any, any>('AboutSlice/addAbout', async (params, thunkApi) => {
     try {
         const {data} = await createAbout({...params?.data})
-        params?.navigate(RoutesName.Abouts)
+        params?.navigate(RoutesName.About)
 
         toast({
             title: "Success ",
@@ -28,7 +28,7 @@ export const addAbout = createAsyncThunk<any, any>('AboutSlice/addAbout', async 
 export const editAbout = createAsyncThunk<any, any>('AboutSlice/editAbout', async (params, thunkApi) => {
     try {
         const {data} = await updateAbout(params?.data?.id, params?.data)
-        params?.navigate(RoutesName.Abouts)
+        params?.navigate(RoutesName.About)
 
         toast({
             title: "Success ",

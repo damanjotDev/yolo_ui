@@ -1,8 +1,4 @@
-
-import { Home } from "@/components/home/home";
-import { getAboutsWithServer, getPropertiesWithServer, getPropertieWithServer} from "@/app/services";
-import { Navbar } from "@/components/navbars/navbar";
-import { Footer } from "@/components/footer/footer";
+import {getPropertieWithServer} from "@/app/services";
 import { PropertyDetails } from "@/components/properties/property";
 
 interface IParams {
@@ -10,9 +6,7 @@ interface IParams {
 }
 
 async function Page({params}:{params: IParams}) {
-  const [abouts, properties, propertyDetails] = await Promise.all([
-      getAboutsWithServer(), 
-      getPropertiesWithServer(),
+  const [propertyDetails] = await Promise.all([
       getPropertieWithServer(+params.branchId)
     ]);
 
@@ -25,9 +19,7 @@ async function Page({params}:{params: IParams}) {
       flex-col
       text-[70px]"
     >
-      <Navbar properties = {properties}/>
       <PropertyDetails propertyDetails={propertyDetails}/>
-      <Footer abouts = {abouts} />
     </div>
   );
 }

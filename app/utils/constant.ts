@@ -8,7 +8,7 @@ export const RoutesName = {
         Gallery: '/life-yolo',
         Adventure: '/blog',
         Franchise: '/franchise',
-        Contact: '/contact',
+        Contact: '/contact-us',
 
         Services: '/services',
         ServiceAdd: '/services/add',

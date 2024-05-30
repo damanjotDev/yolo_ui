@@ -1,8 +1,5 @@
 
-import { Home } from "@/components/home/home";
-import { getAboutsWithServer, getExperiencesWithServer, getExperienceWithServer, getPropertiesWithServer} from "@/app/services";
-import { Navbar } from "@/components/navbars/navbar";
-import { Footer } from "@/components/footer/footer";
+import { getExperiencesWithServer} from "@/app/services";
 import { Experiences } from "@/components/experiences/experiences";
 
 interface IParams {
@@ -10,9 +7,7 @@ interface IParams {
 }
 
 async function Page({params}:{params: IParams}) {
-  const [abouts, properties,experiences] = await Promise.all([
-      getAboutsWithServer(), 
-      getPropertiesWithServer(),
+  const [experiences] = await Promise.all([
       getExperiencesWithServer()
     ]);
 
@@ -25,9 +20,7 @@ async function Page({params}:{params: IParams}) {
       flex-col
       text-[70px]"
     >
-      <Navbar properties = {properties}/>
       <Experiences experiences={experiences}/>
-      <Footer abouts = {abouts} />
     </div>
   );
 }
