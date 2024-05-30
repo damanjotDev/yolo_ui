@@ -13,7 +13,7 @@ interface NavbarRoutesProps {
   active: boolean;
   label: string;
   dropdownItems?: undefined | {
-    id: string;
+    id: number;
     title: string;
     navigate: () => void;
   }[];

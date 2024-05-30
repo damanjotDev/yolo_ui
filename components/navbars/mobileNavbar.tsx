@@ -25,7 +25,7 @@ interface NavbarRoutesProps {
   active: boolean;
   label: string;
   dropdownItems?: undefined | {
-    id: string;
+    id: number;
     title: string;
     navigate: () => void;
   }[];
@@ -57,8 +57,8 @@ const MobileNavbar = ({navbarRoutes}:{navbarRoutes: NavbarRoutesProps[]}) => {
                   {/* Mobile Navigation section */}
                   <Accordion type="single" collapsible className="w-full gap-2">
                     {navbarRoutes?.map((item)=>(
-                      <AccordionItem className={cn(item.active &&  "text-primary")} key={item.id} value={item.id} onClick={item.navigate}>
-                      <AccordionTrigger className="py-3" >
+                      <AccordionItem className={cn(item.active &&  "text-primary")} key={item.id} value={item.id}>
+                      <AccordionTrigger className="py-3" onClick={item.navigate}>
                         <TypographyH4 title={item.label}/>
                       </AccordionTrigger>
 

@@ -53,17 +53,17 @@ const Navbar = ({properties}:{properties: PropertiesModal}) => {
               label: 'Adventure Awaits', 
               dropdownItems: [
                   {
-                      id:'1', 
+                      id:1, 
                       title: 'Blog', 
                       navigate: ()=> navigate.push(RoutesName.Adventure)
                   },
                   {
-                      id:'2', 
+                      id:2, 
                       title: 'Franchise', 
                       navigate: ()=> navigate.push(RoutesName.Franchise)
                   },
                   {
-                      id:'3', 
+                      id:3, 
                       title: 'Contact Us', 
                       navigate: ()=> navigate.push(RoutesName.Contact)
                   }
