@@ -94,9 +94,9 @@ export const removeRoom = createAsyncThunk<any, any>('RoomSlice/removeRoom', asy
         return thunkApi.rejectWithValue(error.response?.status)
     }
 })
-export const getRoomsWithServer = async () => {
+export const getRoomsWithServer = async (filter={}) => {
     try {
-        const {data} = await fetchRooms({})
+        const {data} = await fetchRooms({...filter})
         return data.data
     } catch (err) {
         const error: any = err;
