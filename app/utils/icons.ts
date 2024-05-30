@@ -9,7 +9,7 @@ import { MdOutlineAnalytics, MdOutlineMenu, MdDeveloperBoard, MdOutlineMarkEmail
 import { MdOutlineNotificationsNone, MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { ImAttachment } from "react-icons/im";
 import { GoArrowRight } from "react-icons/go";
-import { FiMenu, FiSend, FiPhone } from "react-icons/fi";
+import { FiMenu, FiSend, FiPhone, FiPlus, FiMinus } from "react-icons/fi";
 import { BsTelephoneFill, BsBrowserChrome, BsLifePreserver } from "react-icons/bs";
 import { TbAward } from "react-icons/tb";
 import { SiNamecheap } from "react-icons/si";
@@ -70,5 +70,7 @@ export{
     FaUpload, 
     FaRegFileImage, 
     FaRegFile,
-    BsX
+    BsX,
+    FiPlus,
+    FiMinus
 }

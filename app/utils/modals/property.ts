@@ -1,5 +1,5 @@
 export interface PropertyModal {
-  id: string;
+  id: number;
   email: string;
   title: string;
   images: ImageModal[];
