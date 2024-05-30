@@ -38,7 +38,7 @@ export const RoutesName = {
         RoomAdd: '/rooms/add',
         RoomEdit: '/rooms/edit',
 
-        Abouts: '/abouts',
+        About: '/about',
         AboutAdd: '/abouts/add',
         AboutEdit: '/abouts/edit',
 

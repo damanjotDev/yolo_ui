@@ -106,3 +106,15 @@ export const getAboutsWithServer = async () => {
         // throw new Error('Something went wrong')
     }
   }
+
+export const getAboutWithServer = async (aboutId: any) => {
+    try {
+        const {data} = await fetchAbout(aboutId)
+        return data.data
+    } catch (err) {
+        const error: any = err;
+        console.log('err', error)
+        // throw new Error('Something went wrong')
+    }
+  }
+

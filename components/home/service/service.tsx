@@ -163,10 +163,7 @@ const HomeServices = ({services}:{services: ServicesModal}) => {
                               font-[400]'
                               dangerouslySetInnerHTML={{__html: ele?.description || ""}}/>
                             </div>
-    
-                            <div onClick={()=> {}} className='flex'>
-                             <TypographyH5 title={'Read more'} className='text-white p-2 px-3 bg-primary ' />
-                            </div>
+
                         </motion.div>
                     </div>
                   </motion.div>

@@ -96,21 +96,21 @@ const HomeAbout = ({ abouts }: { abouts: AboutsModal }) => {
                         border-2
                         border-primary
                         hover:bg-primary"
-                            onClick={() => navigate.push(RoutesName.Abouts)}>
+                            onClick={() => navigate.push(RoutesName.About+"/"+about?.id)}>
                             <TypographyP
-                                className="
+                            className="
                             font-[600] 
                             text-primary
                             group-hover:text-background" title="MORE DETAILS" />
                             <GoArrowRight
-                                size={20}
-                                className="
-                                transition-all
-                                duration-300
-                                rotate-[-45deg]
-                                text-primary
-                                group-hover:rotate-0
-                                group-hover:text-background"/>
+                            size={20}
+                            className="
+                            transition-all
+                            duration-300
+                            rotate-[-45deg]
+                            text-primary
+                            group-hover:rotate-0
+                            group-hover:text-background"/>
                         </button>
                     </motion.div>
                 </div>
