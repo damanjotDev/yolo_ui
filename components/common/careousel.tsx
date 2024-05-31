@@ -8,19 +8,26 @@ import Image from "next/image";
 import { TypographyH1, TypographyH4, TypographyH5, TypographyP } from "../ui/Typography";
 import { cn } from "@/lib/utils";
 
+interface ImageModal {
+    isCover: boolean;
+    name: string,
+    imageUrl: string,
+    type: string,
+    size: number
+  }
 
 interface ImageDataProps {
     id: number;
     title?: string;
     description?: string;
-    imageUrl: any;
+    image: ImageModal;
   }
 
 
 
 const Careousell = (
     {imageData, careousellHeight, imageMode}:
-    {imageData: ImageDataProps[], careousellHeight?: string, imageMode?: 'cover' | 'contain' | 'fill'}
+    {imageData: ImageDataProps[] | [], careousellHeight?: string, imageMode?: 'cover' | 'contain' | 'fill'}
 ) => {
 
     const pathname = usePathname();
@@ -44,7 +51,7 @@ const Careousell = (
                         key={item.id}>
                         <Image
                         fill
-                        src={item.imageUrl}
+                        src={item.image?.imageUrl}
                         className={cn("h-full object-cover w-full", imageMode?`object-${imageMode}`: null)}
                         alt=""
                         />

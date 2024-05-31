@@ -1,7 +1,7 @@
 'use client'
 import HomeCareousell from "../common/careousel";
 import dynamic from "next/dynamic";
-import { AboutsModal, ExperiencesModal, ReviewsModal, RoomsModal, ServicesModal } from "@/app/utils/modals";
+import { AboutsModal, ExperiencesModal, HomesModal, ReviewsModal, RoomsModal, ServicesModal } from "@/app/utils/modals";
 import { HomeAbout } from "./about/about";
 import { HomeRoom } from "./room/room";
 import { HomeServices } from "./service/service";
@@ -37,6 +37,7 @@ const imageData = [
 
 const Home = (
   {
+    homes,
     abouts,
     rooms,
     services,
@@ -44,6 +45,7 @@ const Home = (
     reviews
   }:
     {
+      homes: HomesModal,
       abouts: AboutsModal,
       rooms: RoomsModal,
       services: ServicesModal,
@@ -58,7 +60,7 @@ const Home = (
           flex
           flex-col
           gap-20`}>
-      <HomeCareousell imageData={imageData}/>
+      <HomeCareousell imageData={homes?.rows || []}/>
       <HomeAbout abouts={abouts} />
       <HomeRoom rooms={rooms} />
       <HomeServices services={services} />

@@ -132,7 +132,7 @@ export const fetchRoom = (id: string | number) => axiosInstance.get(`/v1/room/ge
 export const fetchRooms = (data: any) => axiosInstance.get('/v1/room/getall', {params:data});
 export const deleteRoom = (id: string) => axiosInstance.delete(`/v1/room/delete/${id}`)
 
-//----------------------------------------------------------------------room
+//----------------------------------------------------------------------about
 export const createAbout = (data: any) => axiosInstance.post('/v1/about/create', data);
 export const updateAbout = (id: string,data: any) => axiosInstance.put(`/v1/about/update/${id}`, data);
 export const fetchAbout = (id: string) => axiosInstance.get(`/v1/about/get/${id}`)
@@ -155,6 +155,12 @@ export const fetchReviews = (data: any) => axiosInstance.get('/v1/review/getall'
 export const deleteReview = (id: string) => axiosInstance.delete(`/v1/review/delete/${id}`)
 
 
+//----------------------------------------------------------------------home
+export const createHome = (data: any) => axiosInstance.post('/v1/home/create', data);
+export const updateHome = (id: string,data: any) => axiosInstance.put(`/v1/home/update/${id}`, data);
+export const fetchHome = (id: string) => axiosInstance.get(`/v1/home/get/${id}`)
+export const fetchHomes = (data: any) => axiosInstance.get('/v1/home/getall', {data});
+export const deleteHome = (id: string) => axiosInstance.delete(`/v1/home/delete/${id}`)
 
 //---------------------------------------------------------------------------sentMail
 export const sentMail = (data: any) => axiosInstance.post('/v1/sent-mail/normal', data);

@@ -45,8 +45,6 @@ const Footer = ({abouts}:{abouts: AboutsModal}) => {
 
   return (
     <div className="
-    mt-10
-    md:mt-20
     w-full 
     bg-muted
     px-5

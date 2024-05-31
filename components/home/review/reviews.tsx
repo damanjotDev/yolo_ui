@@ -12,8 +12,8 @@ import { ReviewsModal } from "@/app/utils/modals";
 
 
 const HomeReviews = ({ reviews }: { reviews: ReviewsModal }) => {
-
-
+  
+  const navigate = useRouter()
 
   return (
     <div className="
@@ -89,7 +89,7 @@ const HomeReviews = ({ reviews }: { reviews: ReviewsModal }) => {
                 transition-all
                 duration-200
                 hover:bg-primary"
-                onClick={() => {}}>
+                onClick={() => navigate.push(RoutesName.Reviews)}>
                     <TypographyP
                     className="
                     font-[600] 

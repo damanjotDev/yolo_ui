@@ -9,6 +9,7 @@ export const RoutesName = {
         Adventure: '/blog',
         Franchise: '/franchise-og',
         Contact: '/contact-us',
+        Reviews: '/reviews',
 
         Services: '/services',
         ServiceAdd: '/services/add',
