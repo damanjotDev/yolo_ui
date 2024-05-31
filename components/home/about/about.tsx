@@ -55,7 +55,7 @@ const HomeAbout = ({ abouts }: { abouts: AboutsModal }) => {
                     </motion.div>
 
                     <motion.div
-                        className="
+                    className="
                     flex
                     items-center
                     justify-center

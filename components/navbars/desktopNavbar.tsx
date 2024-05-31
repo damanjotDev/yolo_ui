@@ -1,5 +1,5 @@
 'use client'
-import { motion } from "@/app/utils"
+import { RoutesName, motion } from "@/app/utils"
 import { TypographyH1, TypographyH3, TypographyH4, TypographyH5, TypographyP } from "@/components/ui/Typography";
 import { FaChevronDown, GoArrowRight} from "@/app/utils/icons"
 import { cn } from "../../lib/utils";
@@ -21,7 +21,7 @@ interface NavbarRoutesProps {
 
 const DesktopNavbar = ({scrolled, navbarRoutes}:{scrolled?:boolean, navbarRoutes: NavbarRoutesProps[]}) => {
 
-
+  const pathname = usePathname()
 
   const textMotion = {
     rest: {
@@ -117,7 +117,7 @@ const DesktopNavbar = ({scrolled, navbarRoutes}:{scrolled?:boolean, navbarRoutes
                   animate="rest">
                     
                     <div className= {cn(" flex items-center gap-2 transition-all  duration-500  text-background group-hover:text-primary",
-                    scrolled&&"text-foreground", item.active &&  "text-primary")} 
+                    scrolled&&"text-foreground", item.active &&  "text-primary",pathname===RoutesName.Franchise && "text-foreground")} 
                     onClick={item.navigate}>
                       <TypographyP title={item.label}/>
                       <FaChevronDown 

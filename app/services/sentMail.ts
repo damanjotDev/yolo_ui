@@ -7,7 +7,7 @@ export const sentNormalMail = async (payload: any) => {
         toast({
             title: "Success ",
             description: "Mail Sent successfully!",
-            className:'bg-[#22c55e] text-white'
+            className:'font-roboto-condensed bg-primary text-white'
           })
         return data.data
     } catch (err) {
@@ -16,7 +16,7 @@ export const sentNormalMail = async (payload: any) => {
         toast({
             title: "Error ",
             description: error?.message || "Oop's something went wrong!",
-            className:'bg-red-200'
+            className:'font-roboto-condensed bg-red-200'
           })
     }
   }
