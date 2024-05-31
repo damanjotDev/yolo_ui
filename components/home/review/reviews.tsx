@@ -7,6 +7,7 @@ import { FaStar, GoArrowRight, RoutesName, Tilt } from "@/app/utils";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { ReviewsModal } from "@/app/utils/modals";
+import Link from "next/link";
 
 
 
@@ -74,7 +75,7 @@ const HomeReviews = ({ reviews }: { reviews: ReviewsModal }) => {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: 'easeInOut'}}
           viewport={{ once: true }}>
-                <button className="
+                <Link className="
                 w-auto
                 flex
                 items-center
@@ -89,7 +90,7 @@ const HomeReviews = ({ reviews }: { reviews: ReviewsModal }) => {
                 transition-all
                 duration-200
                 hover:bg-primary"
-                onClick={() => navigate.push(RoutesName.Reviews)}>
+                href={RoutesName.Reviews}>
                     <TypographyP
                     className="
                     font-[600] 
@@ -104,7 +105,7 @@ const HomeReviews = ({ reviews }: { reviews: ReviewsModal }) => {
                         text-primary
                         group-hover:rotate-0
                         group-hover:text-background"/>
-                </button>
+                </Link>
             </motion.div>
         </div>
 

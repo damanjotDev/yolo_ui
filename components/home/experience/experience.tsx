@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils";
 import { ExperiencesModal } from "@/app/utils/modals";
 
 import image3 from "@/app/assets/images/home3.jpg"
+import Link from "next/link";
 
 
 
@@ -151,7 +152,7 @@ const HomeExperience = ({ experiences }: { experiences: ExperiencesModal }) => {
                     whileInView={{ y: 0}}
                     transition={{ duration: 0.8, ease: 'linear' }}
                     viewport={{once: true}}>
-                      <button 
+                      <Link 
                       className="
                       flex
                       items-center
@@ -166,7 +167,7 @@ const HomeExperience = ({ experiences }: { experiences: ExperiencesModal }) => {
                       transition-all
                       duration-200
                       bg-primary"
-                        onClick={() => navigate.push(RoutesName.Experiences)}>
+                        href={RoutesName.Experiences}>
                         <TypographyP
                           className="
                           font-[600]" 
@@ -178,7 +179,7 @@ const HomeExperience = ({ experiences }: { experiences: ExperiencesModal }) => {
                           duration-300
                           rotate-[-45deg]
                           group-hover:rotate-0"/>
-                      </button>
+                      </Link>
                    </motion.div>
                   </div>
 

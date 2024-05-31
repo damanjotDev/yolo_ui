@@ -2,43 +2,44 @@
 import { usePathname, useRouter} from "next/navigation";
 import { motion } from "@/app/utils/animation";
 
-import { FaChevronRight, FiSend, IoLocation, BsTelephoneFill, MdOutlineMarkEmailRead, BsLifePreserver } from "@/app/utils";
+import { FaChevronRight, FiSend, IoLocation, BsTelephoneFill, MdOutlineMarkEmailRead, BsLifePreserver, RoutesName } from "@/app/utils";
 import { ReviewsModal, AboutsModal } from "@/app/utils/modals";
 import { TypographyH1, TypographyH3, TypographyH4, TypographyH5, TypographyP } from "@/components/ui/Typography";
 import { SocialLinks } from "./socialLink";
+import Link from "next/link";
 
 
 
 
 const Footer = ({abouts}:{abouts: AboutsModal}) => {
-  // const navigation = useRouter();
+  const navigation = useRouter();
   const about = abouts?.rows?.find((ele) => ele?.isCover == true)
 
   const usefullLinks = [
     {
       id: 1,
       title: 'Location',
-      navigate: () => {}
+      navigate: RoutesName.Contact
     },
     {
       id: 2,
       title: 'My Bookings',
-      navigate: () => {}
+      navigate: '#'
     },
     {
       id: 3,
       title: 'About us',
-      navigate: () => {}
+      navigate: RoutesName.About+"/"+about?.id
     },
     {
       id: 4,
       title: 'Privacy Policy',
-      navigate: () => {}
+      navigate: '#'
     },
     {
       id: 5,
       title: 'Other Policies',
-      navigate: () => {}
+      navigate: '#'
     },
     
   ]
@@ -121,7 +122,8 @@ const Footer = ({abouts}:{abouts: AboutsModal}) => {
           flex-col
           gap-2">
             {usefullLinks?.map((ele)=>(
-               <div 
+               <Link
+               href={ele.navigate}
                key={ele.id}
                className="
                flex
@@ -143,7 +145,7 @@ const Footer = ({abouts}:{abouts: AboutsModal}) => {
                    <TypographyP title={ele?.title || ""}/>
                  </div>
 
-               </div>
+               </Link>
             ))}
           </div>
 

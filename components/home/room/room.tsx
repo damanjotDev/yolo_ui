@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils";
 import { RoomsModal } from "@/app/utils/modals";
 
 import image3 from "@/app/assets/images/home3.jpg"
+import Link from "next/link";
 
 
 
@@ -171,7 +172,7 @@ const HomeRoom = ({rooms}:{rooms: RoomsModal}) => {
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.8, ease: 'easeInOut'}}
                 viewport={{ once: true }}>
-                <button className="
+                <Link className="
                 flex
                 items-center
                 md:py-3
@@ -187,7 +188,7 @@ const HomeRoom = ({rooms}:{rooms: RoomsModal}) => {
                 border-2
                 border-primary
                 hover:bg-primary"
-                onClick={() => navigate.push(RoutesName.Rooms)}>
+                href={RoutesName.Rooms}>
                     <TypographyP
                     className="
                     font-[600] 
@@ -202,7 +203,7 @@ const HomeRoom = ({rooms}:{rooms: RoomsModal}) => {
                         text-primary
                         group-hover:rotate-0
                         group-hover:text-background"/>
-                </button>
+                </Link>
             </motion.div>
         </div>
     )

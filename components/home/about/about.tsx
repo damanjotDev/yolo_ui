@@ -10,6 +10,7 @@ import { GoArrowRight, RoutesName, Tilt } from "@/app/utils";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { AboutsModal } from "@/app/utils/modals";
+import Link from "next/link";
 
 
 
@@ -82,7 +83,7 @@ const HomeAbout = ({ abouts }: { abouts: AboutsModal }) => {
                         whileInView={{ x: 0, opacity: 1 }}
                         transition={{ duration: 0.8, ease: 'easeInOut'}}
                         viewport={{ once: true }}>
-                        <button className="
+                        <Link className="
                         flex
                         items-center
                         py-3
@@ -96,7 +97,7 @@ const HomeAbout = ({ abouts }: { abouts: AboutsModal }) => {
                         border-2
                         border-primary
                         hover:bg-primary"
-                            onClick={() => navigate.push(RoutesName.About+"/"+about?.id)}>
+                            href={RoutesName.About+"/"+about?.id}>
                             <TypographyP
                             className="
                             font-[600] 
@@ -111,7 +112,7 @@ const HomeAbout = ({ abouts }: { abouts: AboutsModal }) => {
                             text-primary
                             group-hover:rotate-0
                             group-hover:text-background"/>
-                        </button>
+                        </Link>
                     </motion.div>
                 </div>
 
