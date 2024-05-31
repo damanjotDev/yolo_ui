@@ -207,8 +207,8 @@ const DesktopNavbar = ({scrolled, navbarRoutes}:{scrolled?:boolean, navbarRoutes
             text-white
             transition-all
             duration-200
-            bg-primary
-            ">
+            bg-primary"
+            onClick={()=> window.open('https://www.airbnb.co.in/users/show/138737073','_blank')}>
               <TypographyH5 className="font-[600]" title="BOOK ONLINE"/>
               <GoArrowRight 
               size={20}
