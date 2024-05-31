@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import { Oswald } from 'next/font/google'
-import '../globals.css'
-import StoreProviders from '../store/storeProvider'
+import './globals.css'
+import StoreProviders from './store/storeProvider'
 import { ScrollToTop } from '@/components/scrollToTop/scrollToTop';
-import { getAboutsWithServer, getPropertiesWithServer } from '../services';
+import { getAboutsWithServer, getPropertiesWithServer } from './services';
 import { Navbar } from '@/components/navbars/navbar';
 import { Footer } from '@/components/footer/footer';
 import { Toaster } from '@/components/ui/toaster';

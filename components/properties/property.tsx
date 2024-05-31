@@ -16,7 +16,7 @@ const PropertyDetails = ({propertyDetails}:{propertyDetails: PropertyModal}) => 
   const navigate = useRouter();
   const [rooms, setRooms] = useState<null | RoomModal[]>(null);
 
-  const ImageData = propertyDetails?.images?.map((ele, index)=>({id:index+1,title: propertyDetails?.title, imageUrl: ele?.imageUrl}))
+  const ImageData = propertyDetails?.images?.map((ele, index)=>({id:index+1,title: propertyDetails?.title, image: ele}))
 
   useEffect(()=>{
     if(propertyDetails?.id){

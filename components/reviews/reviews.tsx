@@ -22,7 +22,7 @@ const Reviews = ({reviews}:{reviews: ReviewsModal}) => {
           md:pb-10
           pb-5`}>
             <PageInfromation 
-            title="Experiences" 
+            title="Reviews" 
             description="Home / Reviews" 
             imageUrl={reviewBackground}/>
 

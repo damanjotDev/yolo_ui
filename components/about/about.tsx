@@ -31,7 +31,7 @@ const AboutDetails = ({ aboutDetails, services }: { aboutDetails: AboutModal, se
 
   const navigate = useRouter();
 
-  const ImageData = aboutDetails?.images?.map((ele, index) => ({ id: index + 1, title: aboutDetails?.title, imageUrl: ele?.imageUrl }))
+  const ImageData = aboutDetails?.images?.map((ele, index) => ({ id: index + 1, title: aboutDetails?.title, image: ele }))
 
   return (
     <div 

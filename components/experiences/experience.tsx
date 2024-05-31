@@ -13,7 +13,7 @@ const ExperienceDeatils = ({experienceDetails}:{experienceDetails: ExperienceMod
 
   const navigate = useRouter();
 
-  const ImageData = experienceDetails?.images?.map((ele, index)=>({id:index+1,title: experienceDetails?.title, imageUrl: ele?.imageUrl}))
+  const ImageData = experienceDetails?.images?.map((ele, index)=>({id:index+1,title: experienceDetails?.title, image: ele}))
 
   return (
       <div className={`

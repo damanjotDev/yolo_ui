@@ -43,7 +43,7 @@ const RoomDeatils = ({roomDetails, rooms}:{roomDetails: RoomModal, rooms: RoomsM
 
   const navigate = useRouter();
 
-  const ImageData = roomDetails?.images?.map((ele, index)=>({id:index+1,description: roomDetails?.title, imageUrl: ele?.imageUrl}))
+  const ImageData = roomDetails?.images?.map((ele, index)=>({id:index+1,description: roomDetails?.title, image: ele}))
 
   return (
       <div className={`

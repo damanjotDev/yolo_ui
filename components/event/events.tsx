@@ -191,7 +191,7 @@ const Events = ({events}:{events: EventsModal}) => {
         <Careousell 
         careousellHeight= "h-[calc(80vh)]" 
         imageMode="contain"
-        imageData = {filterEvents?.[imageIndex]?.images?.map((ele: any, index: number)=> ({id:index+1,title: filterEvents?.[imageIndex]?.title, imageUrl: ele?.imageUrl}))}/>
+        imageData = {filterEvents?.[imageIndex]?.images?.map((ele: any, index: number)=> ({id:index+1,title: filterEvents?.[imageIndex]?.title, image: ele}))}/>
         </div>
       </CustomDialog>
     </>
