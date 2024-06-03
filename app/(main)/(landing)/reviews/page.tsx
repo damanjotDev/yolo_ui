@@ -4,11 +4,8 @@ import { getReviewsWithServer } from "@/app/services/review";
 import { Experiences } from "@/components/experiences/experiences";
 import { Reviews } from "@/components/reviews/reviews";
 
-interface IParams {
-  experienceId: string;
-}
 
-async function Page({params}:{params: IParams}) {
+async function Page() {
   const [reviews] = await Promise.all([
       getReviewsWithServer()
     ]);

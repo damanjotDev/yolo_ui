@@ -25,7 +25,7 @@ const ErrorPage = ({
                 items-center
                 justify-center
                 text-primary">
-                    <TypographyH1 title={error?.message || "404 NOT"} />
+                    <TypographyH1 title={error?.message==="NEXT_NOT_FOUND"&&"PAGE NOT FOUND" || "404 NOT"} />
                 </div>
 
                 <div className="

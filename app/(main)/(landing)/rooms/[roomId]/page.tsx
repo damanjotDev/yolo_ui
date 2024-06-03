@@ -1,6 +1,7 @@
 
 import {getRoomWithServer, getRoomsWithServer} from "@/app/services";
 import { RoomDeatils } from "@/components/rooms/room";
+import { notFound } from "next/navigation";
 
 interface IParams {
   roomId: string;
@@ -11,6 +12,10 @@ async function Page({params}:{params: IParams}) {
       getRoomWithServer(+params.roomId),
       getRoomsWithServer()
     ]);
+
+    if(!roomDetails || !rooms) {
+      notFound()
+    }
 
   return (
     <div

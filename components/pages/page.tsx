@@ -113,7 +113,7 @@ const PageDetails = ({pageDetails, categories}:{pageDetails: PageModal, categori
                     </div>
                     <div className="grid w-full items-center gap-1.5">
                       {categories?.rows?.map((ele)=>(
-                        <div className="flex items-center w-full justify-between p-2 border-b-[1px]">
+                        <div key={ele.id} className="flex items-center w-full justify-between p-2 border-b-[1px]">
                           <TypographyH5 className="font-bold text-gray-500" title={ele.title}/>
                           <FaChevronRight className="p-1 h-5 w-5 rounded-sm bg-primary text-background"/>
                         </div>

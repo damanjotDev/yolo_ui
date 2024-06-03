@@ -101,7 +101,7 @@ export const getEventsWithServer = async () => {
         return data.data
     } catch (err) {
         const error: any = err;
-        throw new Error(error?.data?.msg || "Oop's something went wrong")
+        console.log('err', error)
     }
   }
 
@@ -111,6 +111,6 @@ export const getEventsWithServer = async () => {
         return data.data
     } catch (err) {
         const error: any = err;
-        throw new Error(error?.data?.msg || "Oop's something went wrong")
+        return undefined;
     }
   }

@@ -1,6 +1,7 @@
 
 import { getExperienceWithServer} from "@/app/services";
 import { ExperienceDeatils } from "@/components/experiences/experience";
+import { notFound } from "next/navigation";
 
 interface IParams {
   experienceId: string;
@@ -8,6 +9,10 @@ interface IParams {
 
 async function Page({params}:{params: IParams}) {
   const experienceDetails = await getExperienceWithServer(+params.experienceId)
+
+  if(!experienceDetails) {
+    notFound()
+  }
 
   return (
     <div

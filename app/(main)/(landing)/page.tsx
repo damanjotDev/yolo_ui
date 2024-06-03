@@ -13,7 +13,6 @@ async function Page() {
       getExperiencesWithServer(),
       getReviewsWithServer()
     ]);
-
   return (
     <div
       className="

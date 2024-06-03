@@ -1,5 +1,6 @@
 import { getAboutWithServer, getServicesWithServer} from "@/app/services";
 import { AboutDetails } from "@/components/about/about";
+import { notFound } from "next/navigation";
 
 interface IParams {
   aboutId: string;
@@ -11,6 +12,9 @@ async function Page({params}:{params: IParams}) {
       getServicesWithServer()
     ]);
 
+    if(!aboutDetails || !services) {
+      notFound()
+    }
   return (
     <div
       className="

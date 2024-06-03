@@ -2,6 +2,7 @@
 import { getCategoriesWithServer, getPageWithServer} from "@/app/services";
 import { PageDetails } from "@/components/pages/page";
 import { Reviews } from "@/components/reviews/reviews";
+import { notFound } from "next/navigation";
 
 interface IParams {
   pages: string;
@@ -14,6 +15,11 @@ async function Page({params}:{params: IParams}) {
     getPageWithServer(+paramId),
     getCategoriesWithServer()
   ])
+
+  if(!pageDetails || !categories) {
+    notFound()
+  }
+  
   return (
     <div
       className="

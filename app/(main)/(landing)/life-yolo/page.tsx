@@ -6,11 +6,10 @@ interface IParams {
   experienceId: string;
 }
 
-async function Page({params}:{params: IParams}) {
+async function Page() {
   const [events] = await Promise.all([
       getEventsWithServer()
     ]);
-
   return (
     <div
       className="
