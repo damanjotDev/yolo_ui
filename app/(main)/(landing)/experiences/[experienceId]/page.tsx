@@ -7,9 +7,7 @@ interface IParams {
 }
 
 async function Page({params}:{params: IParams}) {
-  const [experienceDetails] = await Promise.all([
-      getExperienceWithServer(+params.experienceId)
-    ]);
+  const experienceDetails = await getExperienceWithServer(+params.experienceId)
 
   return (
     <div

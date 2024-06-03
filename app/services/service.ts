@@ -101,7 +101,6 @@ export const getServicesWithServer = async () => {
         return data.data
     } catch (err) {
         const error: any = err;
-        console.log('err', error)
-        // throw new Error('Something went wrong')
+        throw Error(error?.data?.msg || "Oop's something went wrong")
     }
   }
