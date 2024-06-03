@@ -94,3 +94,13 @@ export const removeCategory = createAsyncThunk<any, any>('CategorySlice/removeCa
         return thunkApi.rejectWithValue(error.response?.status)
     }
 })
+
+export const getCategoriesWithServer = async () => {
+    try {
+        const {data} = await fetchCategories({})
+        return data.data
+    } catch (err) {
+        const error: any = err;
+        throw new Error(error?.data?.msg || "Oop's something went wrong")
+    }
+  }

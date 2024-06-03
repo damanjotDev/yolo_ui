@@ -5,3 +5,9 @@ export interface CategoryModal {
     createdAt: Date;
     updatedAt: Date;
   }
+
+export interface CategoriesModal {
+    count: number;
+    rows: CategoryModal[]
+  }
+  

@@ -100,7 +100,7 @@ export const getRoomsWithServer = async (filter={}) => {
         return data.data
     } catch (err) {
         const error: any = err;
-        throw  Error(error?.data?.msg || "Oop's something went wrong")
+        throw new Error(error?.data?.msg || "Oop's something went wrong")
     }
   }
 
@@ -110,6 +110,6 @@ export const getRoomWithServer = async (roomId: number) => {
         return data.data
     } catch (err) {
         const error: any = err;
-        throw  Error(error?.data?.msg || "Oop's something went wrong")
+        throw new Error(error?.data?.msg || "Oop's something went wrong")
     }
   }

@@ -162,6 +162,13 @@ export const fetchHome = (id: string) => axiosInstance.get(`/v1/home/get/${id}`)
 export const fetchHomes = (data: any) => axiosInstance.get('/v1/home/getall', {data});
 export const deleteHome = (id: string) => axiosInstance.delete(`/v1/home/delete/${id}`)
 
+//----------------------------------------------------------------------page
+export const createPage = (data: any) => axiosInstance.post('/v1/page/create', data);
+export const updatePage = (id: string,data: any) => axiosInstance.put(`/v1/page/update/${id}`, data);
+export const fetchPage = (id: string) => axiosInstance.get(`/v1/page/get/${id}`)
+export const fetchPages = (data: any) => axiosInstance.get('/v1/page/getall', {data});
+export const deletePage = (id: string) => axiosInstance.delete(`/v1/page/delete/${id}`)
+
 //---------------------------------------------------------------------------sentMail
 export const sentMail = (data: any) => axiosInstance.post('/v1/sent-mail/normal', data);
 

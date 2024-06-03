@@ -3,15 +3,14 @@ import { usePathname, useRouter} from "next/navigation";
 import { motion } from "@/app/utils/animation";
 
 import { FaChevronRight, FiSend, IoLocation, BsTelephoneFill, MdOutlineMarkEmailRead, BsLifePreserver, RoutesName } from "@/app/utils";
-import { ReviewsModal, AboutsModal } from "@/app/utils/modals";
+import { ReviewsModal, AboutsModal, PagesModal } from "@/app/utils/modals";
 import { TypographyH1, TypographyH3, TypographyH4, TypographyH5, TypographyP } from "@/components/ui/Typography";
 import { SocialLinks } from "./socialLink";
 import Link from "next/link";
 
 
 
-
-const Footer = ({abouts}:{abouts: AboutsModal}) => {
+const Footer = ({abouts, pages}:{abouts: AboutsModal, pages: PagesModal}) => {
   const navigation = useRouter();
   const about = abouts?.rows?.find((ele) => ele?.isCover == true)
 
@@ -23,25 +22,9 @@ const Footer = ({abouts}:{abouts: AboutsModal}) => {
     },
     {
       id: 2,
-      title: 'My Bookings',
-      navigate: '#'
-    },
-    {
-      id: 3,
       title: 'About us',
       navigate: RoutesName.About+"/"+about?.id
-    },
-    {
-      id: 4,
-      title: 'Privacy Policy',
-      navigate: '#'
-    },
-    {
-      id: 5,
-      title: 'Other Policies',
-      navigate: '#'
-    },
-    
+    } 
   ]
 
   return (
@@ -147,6 +130,34 @@ const Footer = ({abouts}:{abouts: AboutsModal}) => {
 
                </Link>
             ))}
+            {
+              pages?.rows?.map((ele)=>(
+                <Link
+                href={`/${ele.title?.split(" ")?.join("-")+"-"+ele.id}`}
+                key={ele.id}
+                className="
+                flex
+                gap-2
+                transition-transform
+                duration-400
+                hover:text-primary">
+ 
+                  <div className="
+                  flex
+                  items-center
+                  justify-center">
+                    <FaChevronRight size={10}/>
+                  </div>
+ 
+                  <div className="
+                  flex
+                  items-center justify-center">
+                    <TypographyP title={ele?.title || ""}/>
+                  </div>
+ 
+                </Link>
+              ))
+            }
           </div>
 
         </div>

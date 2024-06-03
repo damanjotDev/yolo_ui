@@ -6,6 +6,6 @@ export const getHomesWithServer = async () => {
         return data.data
     } catch (err) {
         const error: any = err;
-        throw Error(error?.data?.msg || "Oop's something went wrong")
+        throw new Error(error?.data?.msg || "Oop's something went wrong")
     }
   }

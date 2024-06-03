@@ -3,7 +3,7 @@ import { Oswald } from 'next/font/google'
 import './globals.css'
 import StoreProviders from './store/storeProvider'
 import { ScrollToTop } from '@/components/scrollToTop/scrollToTop';
-import { getAboutsWithServer, getPropertiesWithServer } from './services';
+import { getAboutsWithServer, getPagesWithServer, getPropertiesWithServer } from './services';
 import { Navbar } from '@/components/navbars/navbar';
 import { Footer } from '@/components/footer/footer';
 import { Toaster } from '@/components/ui/toaster';
@@ -23,9 +23,10 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const [abouts, properties] = await Promise.all([
+  const [abouts, properties, pages] = await Promise.all([
     getAboutsWithServer(), 
-    getPropertiesWithServer()
+    getPropertiesWithServer(),
+    getPagesWithServer(),
   ]);
   return (
     <html lang="en">
@@ -34,7 +35,7 @@ export default async function RootLayout({
           <ScrollToTop/>
           <Navbar properties = {properties}/>
           {children}
-          <Footer abouts = {abouts} />
+          <Footer abouts = {abouts} pages={pages}/>
            <Toaster />
         </StoreProviders>
       </body>

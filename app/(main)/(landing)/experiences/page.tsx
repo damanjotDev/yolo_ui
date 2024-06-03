@@ -6,7 +6,7 @@ interface IParams {
   experienceId: string;
 }
 
-async function Page({params}:{params: IParams}) {
+async function Page() {
   const [experiences] = await Promise.all([
       getExperiencesWithServer()
     ]);
