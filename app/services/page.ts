@@ -9,7 +9,7 @@ export const getPagesWithServer = async () => {
         return data.data
     } catch (err) {
         const error: any = err;
-        throw new Error(error?.data?.msg || "Oop's something went wrong")
+        throw error?.data?.msg || "Oop's something went wrong"
     }
   }
 
@@ -20,7 +20,7 @@ export const getPageWithServer = async (PageId: any) => {
     } catch (err) {
         console.log('err', err, PageId)
         const error: any = err;
-        throw new Error(error?.data?.msg || "Oop's something went wrong")
+        throw error?.data?.msg || "Oop's something went wrong"
     }
   }
 

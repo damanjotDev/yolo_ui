@@ -102,7 +102,7 @@ export const getExperiencesWithServer = async () => {
         return data.data
     } catch (err) {
         const error: any = err;
-        throw new Error(error?.data?.msg || "Oop's something went wrong")
+        throw error?.data?.msg || "Oop's something went wrong"
     }
   }
 
@@ -112,6 +112,6 @@ export const getExperiencesWithServer = async () => {
         return data.data
     } catch (err) {
         const error: any = err;
-        throw new Error(error?.data?.msg || "Oop's something went wrong")
+        throw error?.data?.msg || "Oop's something went wrong"
     }
   }

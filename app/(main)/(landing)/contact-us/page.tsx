@@ -1,25 +1,31 @@
 
-import {getAboutsWithServer, getPropertiesWithServer} from "@/app/services";
+import { getAboutsWithServer, getPropertiesWithServer } from "@/app/services";
+import ErrorPage from "@/components/common/error";
 import { ContactUs } from "@/components/contact/contactUs";
 
 
 async function Page() {
-  const [abouts] = await Promise.all([
+  try {
+    const [abouts] = await Promise.all([
       getAboutsWithServer()
     ]);
 
-  return (
-    <div
-      className="
+    return (
+      <div
+        className="
       w-full
       h-auto
       flex
       flex-col
       text-[70px]"
-    >
-      <ContactUs abouts={abouts}/>
-    </div>
-  );
+      >
+        <ContactUs abouts={abouts} />
+      </div>
+    );
+  } catch (error: any) {
+    let err:string = error;
+    return (<ErrorPage error={err}/>)
+  }
 }
 
 export default Page;

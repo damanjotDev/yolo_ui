@@ -1,15 +1,16 @@
+'use client'
 import React from 'react'
 import { TypographyH1, TypographyH2, TypographyH5 } from '../ui/Typography'
 import Link from 'next/link'
 import { GoArrowRight, RoutesName } from '@/app/utils'
+import { useRouter } from 'next/navigation'
 
 const ErrorPage = ({
-    error,
-    reset,
+    error
   }: {
-    error: Error & { digest?: string }
-    reset: () => void
+    error: string;
   }) => {
+    const router = useRouter()
     return (
         <div className='w-full h-screen'>
             <div className="
@@ -25,7 +26,7 @@ const ErrorPage = ({
                 items-center
                 justify-center
                 text-primary">
-                    <TypographyH1 title={error?.message || "404 NOT"} />
+                    <TypographyH1 title={error || "404 NOT"} />
                 </div>
 
                 <div className="
@@ -47,7 +48,7 @@ const ErrorPage = ({
                     duration-200
                     border-primary
                     border-2"
-                    onClick={reset}>
+                    onClick={()=> router.refresh()}>
                         <TypographyH5 className="font-[600]" title="TRY AGAIN" />
                         <GoArrowRight
                         size={20}

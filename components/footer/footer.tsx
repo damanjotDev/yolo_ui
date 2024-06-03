@@ -316,8 +316,8 @@ const Footer = ({abouts, pages}:{abouts: AboutsModal, pages: PagesModal}) => {
            {about?.awards?.map((ele, index)=>(
             <div 
             key={index+1}
-            className="h-[100px]">
-              <img src={ele?.imageUrl} className="h-full w-full object-contain"/>
+            className="md:h-[100px] h-auto">
+              <img src={ele?.imageUrl} className="h-full w-full md:object-contain object-cover"/>
             </div>
            ))}
           </div>
