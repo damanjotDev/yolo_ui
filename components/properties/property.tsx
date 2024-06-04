@@ -106,7 +106,8 @@ const PropertyDetails = ({propertyDetails}:{propertyDetails: PropertyModal}) => 
 
                         <div className="
                         flex
-                        items-center
+                        md:flex-row
+                        flex-col
                         gap-5
                         font-roboto-condensed">
                           <div 

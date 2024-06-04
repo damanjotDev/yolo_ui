@@ -67,6 +67,7 @@ const Events = ({events}:{events: EventsModal}) => {
 
               <div className="
               flex
+              flex-wrap
               items-center
               gap-5">
                 {AvailableEventTypes?.map((ele, index)=>(
